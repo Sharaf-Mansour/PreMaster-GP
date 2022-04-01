@@ -7,7 +7,7 @@
 5. Dean
 ## Use Cases
 ### 1. Coordinator
-- Maintain users accounts
+- [Maintain users accounts](https://github.com/Sharaf-Mansour/PreMaster-GP/issues/1)
 - Maintain programs information
 - Maintain courses information
 - Maintain lecturers' information 
