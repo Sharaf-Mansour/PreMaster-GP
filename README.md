@@ -10,7 +10,9 @@
 - Maintain users accounts
 - Maintain programs information
 - Maintain courses information
-- Maintain lecturers' information (personal/educational)
+- Maintain lecturers' information 
+    - personal 
+    - educational
 - Assign lecturer to courses
 - Assign students to complementary courses (from pervious programs)
 - Maintain timetable (time slots)
@@ -55,15 +57,29 @@
 - Upload assignments
 - Manage blog
 ### 4. Employee
-- Maintain students' information (personal/educational/registration/Payment information)
+- Maintain students' information
+    - personal
+    - educational
+    - registration
+    - Payment information
 - Register students in program
 - Maintain halls/labs information
 - Send Announcements to students
 - View students' payment status report
 - View students' registration condition report
 ### 5. Dean
-- Program report (semester, program, $students, Success %, teaching time, #lectures)
-- Teaching report (semester, lecturer,  #courses, Teaching %)
+- Program report 
+  -  semester
+  -  program
+  -  #Students
+  -  Success %
+  -  Teaching time
+  -  #Lectures
+- Teaching report 
+   - semester 
+   -  lecturer
+   -  #Courses
+   -  Teaching %
 ## Classes
 ### Users
 ### Programs
@@ -75,5 +91,5 @@
 ### Quizzes
 ### Assignments
 ### Exams
-### Announcemnts
+### Announcements
 ### Blogs
