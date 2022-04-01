@@ -1,4 +1,4 @@
-# System Proposal
+# FGSSR Professional Programs Educational System
 ## Actors
 1. Program Coordinator
 2. Lecturer
