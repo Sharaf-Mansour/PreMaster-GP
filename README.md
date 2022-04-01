@@ -6,7 +6,7 @@
 4. Employee
 5. Dean
 ## Use Cases
-1. Coordinator
-  a. Maintain users accounts
-  b. Maintain programs information
+### 1. Coordinator
+- Maintain users accounts
+- Maintain programs information
                                                             
