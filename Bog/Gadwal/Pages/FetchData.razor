@@ -2,7 +2,6 @@
 
 <PageTitle>Weather forecast</PageTitle>
 
-@using Gadwal.Data
 @inject WeatherForecastService ForecastService
 
 <h1>Weather forecast</h1>
@@ -43,6 +42,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
+        ForecastService.IsLogin = false;
         forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
     }
 }
