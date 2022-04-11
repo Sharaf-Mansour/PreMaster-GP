@@ -1,0 +1,32 @@
+<style>
+    .bg-custom {
+    background-color: rgba(100,100,100,0.5);
+    top:0 !important;
+}
+.opened {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+    display: block;
+}
+.btn {
+    margin: 10px;
+}
+</style>
+<div class='modal model-dialog-scrollable modal-fullscreen bg-custom @(show ? "opened" : " ")' @onclick="@ToggleShowModel">
+    <div class="modal-dialog   modal-xl modal-dialog-centered" @onclick="@ToggleShowModel">
+        <div class="modal-content float-end  ">
+            <div class=" p-2">
+                <button class="btn-close float-end" @onclick="ToggleShowModel" type="submit" aria-label="Close-Button"></button>
+            </div>
+            @ChildContent
+        </div>
+    </div>
+</div>
+<button type="submit" class="btn btn-primary fs-5" @onclick="ToggleShowModel">عرض</button>
+<br />
+@code {
+    bool show = false;
+    void ToggleShowModel() => show = !show ;
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+}
