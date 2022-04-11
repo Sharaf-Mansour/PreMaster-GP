@@ -48,29 +48,38 @@
 			
 			  <div class="row mt-2 justify-content-center">
 				<div class="col-lg-8 col-md-8 col-sm-12" style="overflow-x:auto">
-				<table id="" class="table table-light  table-hover table-striped text-center  ">
+				<table id="" class="table table-light  table-hover table-striped text-center table-responsive table-sm ">
 					<thead>
-						<th><input type="checkbox"  name="selected">  الكل </th>
+						<th><input type="checkbox"  name="selected" @onchange="(eventArgs) => students.ForEach(x=> x.selected = (bool)eventArgs.Value)">  الكل </th>
 						<th>#</th>
 						<th>اسم الطالب </th>
 						<th>عرض الملف</th>
-						<th> <div  class="btn btn-success">قبول المحدد</div></th>
-						<th><div  class="btn btn-danger">رفض المحدد</div> </th>
+						<th> <button  class="btn btn-outline-success">قبول المحدد</button></th>
+						<th><button  class="btn btn-outline-danger">رفض المحدد</button> </th>
 					</thead>
 					<tbody>
-                    
+					@{
+
+			
+                        int count=0;
+
                         @foreach (var i in students)
                         {count++;
                             
 						<tr>
-							<td> <input type="checkbox"  name="selected"></td>
+							<td> <input type="checkbox"  name="selected" @bind="i.selected"></td>
 							<td>@count </td>
 							<td>@i.Name</td>
-							<td><button class="btn btn-primary"  >عرض</button></td>
+							<td>
+								<ModelDialog>
+									<ViewStuidentDetails></ViewStuidentDetails>				
+								 </ModelDialog>
+							</td>
 							<td><button class="btn btn-success">قبول </button></td>
 							<td><button class="btn btn-danger">رفض </button></td>
 						</tr>
-						}
+						}		
+							}
 					</tbody>
 				</table>
 				</div>
@@ -86,10 +95,10 @@
 @code {
     public bool Show { get; set; } = true;
 	bool sw ;
-    int count=0;
     public class Student
     {
        public string Name;
+	   public bool selected;
         
     }
     List<Student> students = new List<Student>() { 
