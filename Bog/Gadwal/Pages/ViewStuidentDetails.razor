@@ -1,0 +1,173 @@
+@page "/StudentInfo"
+<div class="container-fluid">
+	<div class="row justify-content-center">
+		<div class="col-12">
+			
+			
+			  <div class="row mt-2 justify-content-center">
+				<div class="col-lg-12 col-md-12 col-sm-12" style="overflow-x:auto">
+				<table id="" class="table table-light  table-hover table-striped text-center table-responsive ">
+					<thead>
+						
+					</thead>
+					<tbody>
+                    @{
+                         int count=0;
+                        foreach (var i in StuidentDetails)
+                        {
+                            count++;
+                            
+						
+                        <tr>
+                            <td>الأسم رباعي (باللغة العربية) </td>
+                            <td>@i.NameArabic</td>
+                        </tr>
+                        <tr>
+                            <td>الأسم رباعي (باللغة الانجليزية)</td>
+                            <td>@i.NameEnglish</td>
+                        </tr>
+                        <tr>
+                            <td>الجنسية</td>
+                            <td>@i.Nationality</td>
+                        </tr>
+                        <tr>
+                            <td>رقم تحقيق الشخصية</td>
+                            <td>@i.id</td>
+                        </tr>
+                        <tr>
+                            <td>تاريخ الميلاد</td>
+                            <td>@i.BrithDay</td>
+                        </tr>
+                        <tr>
+                            <td>مكان الميلاد</td>
+                            <td>@i.PlaceOfBirth</td>
+                        </tr>
+                        <tr>
+                            <td>الجنس</td>
+                            <td>@i.Sex</td>
+                        </tr>
+                        <tr>
+                            <td>مكان الإقامة</td>
+                            <td>@i.Property</td>
+                        </tr>
+                        <tr>
+                            <td>الوظيفة</td>
+                            <td>@i.Job</td>
+                        </tr>
+                        <tr>
+                            <td>اسم الشركه</td>
+                            <td>@i.company</td>
+                        </tr>
+                        <tr>
+                            <td>رقم الهاتف (واتساب)</td>
+                            <td>@i.phone</td>
+                        </tr>
+                        <tr>
+                            <td>البريد الإلكتروني</td>
+                            <td>@i.Mail</td>
+                        </tr>
+                        <tr>
+                            <td>اخر مؤهل جامعي حصل عليه</td>
+                            <td>@i.FullyQualified</td>
+                        </tr>
+                        <tr>
+                            <td>الكلية</td>
+                            <td>@i.College</td>
+                        </tr>
+                        <tr>
+                            <td>الجامعة</td>
+                            <td>@i.University</td>
+                        </tr>
+                        <tr>
+                            <td>التقدير العام</td>
+                            <td>@i.estimate</td>
+                        </tr>
+                        <tr>
+                            <td>الدرجة الأكاديمية المراد التسجيل فيها</td>
+                            <td>@i.AcademicDegree</td>
+                        </tr>
+                        <tr>
+                            <td>التخصص المراد الالتحاق به</td>
+                            <td>@i.Specialization</td>
+                        </tr>
+                        <tr>
+                            <td>الصورة الشخصية (4*6)</td>
+                            <td><button class="btn btn-link">عرض</button></td>
+                        </tr>
+                        <tr>
+                            <td>شهادة الميلاد</td>
+                            <td><button class="btn btn-link">عرض</button></td>
+                        </tr>
+                        <tr>
+                            <td>صورة تحقيق الشخصية (وجه و ظهر)</td>
+                            <td><button class="btn btn-link">عرض</button></td>
+                        </tr>
+                        <tr>
+                            <td>صور شهادات التخرج</td>
+                            <td><button class="btn btn-link">عرض</button></td>
+                        </tr>
+                       
+						}       
+                         }
+					</tbody>
+				</table>
+				</div>
+			</div> 
+            
+		   
+		   
+
+		</div>
+	</div>
+</div>
+
+@code {
+    public bool Show { get; set; } = true;
+	bool sw ;
+
+    public class StudentInfo
+    {
+       public string NameArabic;
+       public string NameEnglish;
+       public string Nationality;
+       public string id;
+       public string BrithDay;
+       public string PlaceOfBirth;
+       public string Sex;
+       public string Property;
+       public string Job;
+       public string company;
+       public string phone;
+       public string Mail;
+       public string FullyQualified;
+       public string College;
+       public string University;
+       public string estimate;
+       public string AcademicDegree;
+       public string Specialization ;
+       
+        
+    }
+    List<StudentInfo> StuidentDetails = new List<StudentInfo>() { 
+                new StudentInfo(){NameArabic="الاسم "
+                                ,NameEnglish="MMM"
+                                ,Nationality="مصرى"
+                                ,id="12345678911114"
+                                ,BrithDay="1-1-1900"
+                                ,PlaceOfBirth="مصر"
+                                ,Sex="ّذكر"
+                                ,Property="مصر"
+                                ,Job="طالب"
+                                ,company=""
+                                ,phone="01000000000"
+                                ,Mail="SSSSS@gmail.com"
+                                ,FullyQualified="بكالوريوس حاسبات"
+                                ,College="كلية حاسبات"
+                                ,University="جامعة القاهرة"
+                                ,estimate="امتياز"
+                                ,AcademicDegree="ماجستير"
+                                ,Specialization="هندسة برمجيات"
+                                },
+                
+            };
+}
