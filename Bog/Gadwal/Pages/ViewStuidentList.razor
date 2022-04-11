@@ -1,0 +1,102 @@
+@page "/StudintList"
+@if (Show)
+{
+    <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div class="container-fluid">
+	<div class="row justify-content-center">
+		<div class="col-12">
+			@* <div class="row justify-content-center">
+				<div class="col-8">
+				<div class="row ">
+					<div class="col-lg-8 col-md-8 col-sm-12">
+					<div class="row ">
+						<div class="col-5">
+							
+
+				<button class='btn @(!sw?"btn-light":"btn-dark") ' @onclick='()=> sw=true'>Incoming Lectures</button>
+				</div>
+				<div class="col-5">
+
+				<button class='btn @(sw?"btn-light":"btn-dark") ' @onclick='()=> sw=false'>Previous Lectures</button>
+				</div>
+					</div>
+				</div>
+				</div>
+				</div>
+				
+				
+			</div> *@
+			
+			  <div class="row mt-2 justify-content-center">
+				<div class="col-lg-8 col-md-8 col-sm-12" style="overflow-x:auto">
+				<table id="" class="table table-light  table-hover table-striped text-center  ">
+					<thead>
+						<th><input type="checkbox"  name="selected">  الكل </th>
+						<th>#</th>
+						<th>اسم الطالب </th>
+						<th>عرض الملف</th>
+						<th> <div  class="btn btn-success">قبول المحدد</div></th>
+						<th><div  class="btn btn-danger">رفض المحدد</div> </th>
+					</thead>
+					<tbody>
+                    
+                        @foreach (var i in students)
+                        {count++;
+                            
+						<tr>
+							<td> <input type="checkbox"  name="selected"></td>
+							<td>@count </td>
+							<td>@i.Name</td>
+							<td><button class="btn btn-primary"  >عرض</button></td>
+							<td><button class="btn btn-success">قبول </button></td>
+							<td><button class="btn btn-danger">رفض </button></td>
+						</tr>
+						}
+					</tbody>
+				</table>
+				</div>
+			</div> 
+            
+		   
+		   
+
+		</div>
+	</div>
+</div>
+
+@code {
+    public bool Show { get; set; } = true;
+	bool sw ;
+    int count=0;
+    public class Student
+    {
+       public string Name;
+        
+    }
+    List<Student> students = new List<Student>() { 
+                new Student(){Name="الاسم الاول"},
+                new Student(){Name="الاسم الثانى"},
+                new Student(){Name="الاسم الثالث"},
+                new Student(){Name="الاسم الرابع"},
+                new Student(){Name="الاسم الخامس"}
+            };
+}
