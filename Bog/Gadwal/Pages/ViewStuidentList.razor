@@ -53,6 +53,9 @@
 						<th><input type="checkbox"  name="selected" @onchange="(eventArgs) => students.ForEach(x=> x.selected = (bool)eventArgs.Value)">  الكل </th>
 						<th>#</th>
 						<th>اسم الطالب </th>
+						<th>الدرجة الأكاديمية المراد </th>
+						<th>التخصص </th>
+						<th>رقم الهاتف </th>
 						<th>عرض الملف</th>
 						<th> <button  class="btn btn-outline-success">قبول المحدد</button></th>
 						<th><button  class="btn btn-outline-danger">رفض المحدد</button> </th>
@@ -70,6 +73,9 @@
 							<td> <input type="checkbox"  name="selected" @bind="i.selected"></td>
 							<td>@count </td>
 							<td>@i.Name</td>
+							<td>@i.AcademicDegree</td>
+							<td>@i.Specialization</td>
+							<td>@i.Phone</td>
 							<td>
 								<ModelDialog>
 									<ViewStuidentDetails></ViewStuidentDetails>				
@@ -97,12 +103,15 @@
 	bool sw ;
     public class Student
     {
-       public string Name;
+       public string? Name;
+       public string? AcademicDegree;
+       public string? Specialization;
+       public string? Phone;
 	   public bool selected;
         
     }
     List<Student> students = new List<Student>() { 
-                new Student(){Name="الاسم الاول"},
+                new Student(){Name="الاسم الاول",AcademicDegree="دبلومة",Specialization="هندسة البرمجيات",Phone="011100000000"},
                 new Student(){Name="الاسم الثانى"},
                 new Student(){Name="الاسم الثالث"},
                 new Student(){Name="الاسم الرابع"},
