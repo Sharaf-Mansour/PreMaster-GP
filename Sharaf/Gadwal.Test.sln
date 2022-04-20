@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadwaly.Test", "Gadwaly.Test\Gadwaly.Test.csproj", "{B56B5330-C9C2-47C3-9E6E-C626928FF90B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gadwaly.Test", "Gadwaly.Test\Gadwaly.Test.csproj", "{B56B5330-C9C2-47C3-9E6E-C626928FF90B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadwaly.API", "Gadwaly.API\Gadwaly.API.csproj", "{D6E96F93-E4E0-4A5B-9864-12D8E93087E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadwaly.Broker", "Gadwaly.Broker\Gadwaly.Broker.csproj", "{3A26858F-A3AF-47A1-9833-D6EB27627846}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadwaly.Models", "Gadwaly.Models\Gadwaly.Models.csproj", "{4BE8A37D-C162-47F7-9140-E8FE074EC026}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{B56B5330-C9C2-47C3-9E6E-C626928FF90B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B56B5330-C9C2-47C3-9E6E-C626928FF90B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B56B5330-C9C2-47C3-9E6E-C626928FF90B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6E96F93-E4E0-4A5B-9864-12D8E93087E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6E96F93-E4E0-4A5B-9864-12D8E93087E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6E96F93-E4E0-4A5B-9864-12D8E93087E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6E96F93-E4E0-4A5B-9864-12D8E93087E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A26858F-A3AF-47A1-9833-D6EB27627846}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A26858F-A3AF-47A1-9833-D6EB27627846}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A26858F-A3AF-47A1-9833-D6EB27627846}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A26858F-A3AF-47A1-9833-D6EB27627846}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BE8A37D-C162-47F7-9140-E8FE074EC026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BE8A37D-C162-47F7-9140-E8FE074EC026}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BE8A37D-C162-47F7-9140-E8FE074EC026}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BE8A37D-C162-47F7-9140-E8FE074EC026}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
