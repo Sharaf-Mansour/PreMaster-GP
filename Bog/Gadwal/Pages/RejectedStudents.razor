@@ -1,0 +1,82 @@
+@page "/RejectedStudents"
+
+<div class="container-fluid">
+	<div class="row justify-content-center">
+		<div class="col-12">
+		
+			
+			  <div class="row mt-2 justify-content-center text-center"><h1 style="color: red;">الطلبة المرفوضين</h1></div>
+			  <div class="row mt-2 justify-content-center">
+				<div class="col-lg-8 col-md-8 col-sm-12" style="overflow-x:auto">
+				<table id="" class="table table-light  table-hover table-striped text-center table-responsive table-sm ">
+					<thead>
+						<th><input type="checkbox"  name="selected" @onchange="(eventArgs) => students.ForEach(x=> x.selected = (bool)eventArgs.Value)">  الكل </th>
+						<th>#</th>
+						<th>اسم الطالب </th>
+						<th>الدرجة الأكاديمية المراد </th>
+						<th>التخصص </th>
+						<th>رقم الهاتف </th>
+						<th>عرض الملف</th>
+						<th> <button  class="btn btn-outline-success">Undo All Selected</button></th>
+						<th> <button  class="btn btn-outline-danger">قبول المحدد</button></th>
+						
+					</thead>
+					<tbody>
+					@{
+
+			
+                        int count=0;
+
+                        @foreach (var i in students)
+                        {count++;
+                            
+						<tr>
+							<td> <input type="checkbox"  name="selected" @bind="i.selected"></td>
+							<td>@count </td>
+							<td>@i.Name</td>
+							<td>@i.AcademicDegree</td>
+							<td>@i.Specialization</td>
+							<td>@i.Phone</td>
+							<td>
+								<ModelDialog>
+									<ViewStuidentDetails></ViewStuidentDetails>				
+								 </ModelDialog>
+							</td>
+							<td><button class="btn btn-success">undo </button></td>
+							<td><button class="btn btn-danger">قبول </button></td>
+							
+						</tr>
+						}		
+							}
+					</tbody>
+				</table>
+				</div>
+			</div> 
+            
+		   
+		   
+
+		</div>
+	</div>
+</div>
+
+@code {
+    
+	bool sw ;
+    public class Student
+    {
+       public string? Name;
+       public string? AcademicDegree;
+       public string? Specialization;
+       public string? Phone;
+	   public bool selected;
+        
+    }
+    List<Student> students = new List<Student>() { 
+                new Student(){Name="الاسم الاول",AcademicDegree="دبلومة",Specialization="هندسة البرمجيات",Phone="011100000000"},
+                new Student(){Name="الاسم الثانى"},
+                new Student(){Name="الاسم الثالث"},
+                new Student(){Name="الاسم الرابع"},
+                new Student(){Name="الاسم الخامس"}
+            };
+}
