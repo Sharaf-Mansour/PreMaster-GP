@@ -1,5 +1,5 @@
 ﻿namespace Gadwaly.Models;
-public class StudentArchive
+public record class StudentArchive
 {
     public Guid StudentID { get; set; }
     public string NameArabic { get; set; }
@@ -28,4 +28,5 @@ public class StudentArchive
     public string StudentQualImg { get; set; }
     public string StudentSSNImg { get; set; }
     public string StudentBirthCertImg { get; set; }
+    public bool IsUpdate { get; set; }
 }

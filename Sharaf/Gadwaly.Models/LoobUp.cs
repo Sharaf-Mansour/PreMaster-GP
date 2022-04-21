@@ -2,5 +2,5 @@
 public class LookUp
 {
     public int ID { get; set; }
-    public double Data { get; set; }
+    public string Data { get; set; }
 }
