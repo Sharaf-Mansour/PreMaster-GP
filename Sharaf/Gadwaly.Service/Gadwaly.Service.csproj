@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gadwaly.Broker\Gadwaly.Broker.csproj" />
+    <ProjectReference Include="..\Gadwaly.Models\Gadwaly.Models.csproj" />
+  </ItemGroup>
+
+</Project>
