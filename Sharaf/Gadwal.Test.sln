@@ -5,11 +5,15 @@ VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gadwaly.Test", "Gadwaly.Test\Gadwaly.Test.csproj", "{B56B5330-C9C2-47C3-9E6E-C626928FF90B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadwaly.API", "Gadwaly.API\Gadwaly.API.csproj", "{D6E96F93-E4E0-4A5B-9864-12D8E93087E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gadwaly.API", "Gadwaly.API\Gadwaly.API.csproj", "{D6E96F93-E4E0-4A5B-9864-12D8E93087E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadwaly.Broker", "Gadwaly.Broker\Gadwaly.Broker.csproj", "{3A26858F-A3AF-47A1-9833-D6EB27627846}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gadwaly.Broker", "Gadwaly.Broker\Gadwaly.Broker.csproj", "{3A26858F-A3AF-47A1-9833-D6EB27627846}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadwaly.Models", "Gadwaly.Models\Gadwaly.Models.csproj", "{4BE8A37D-C162-47F7-9140-E8FE074EC026}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gadwaly.Models", "Gadwaly.Models\Gadwaly.Models.csproj", "{4BE8A37D-C162-47F7-9140-E8FE074EC026}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadwaly.Service", "Gadwaly.Service\Gadwaly.Service.csproj", "{CEE3C098-764B-43AB-844F-155FF386F220}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadwaly.Runner", "Gadwaly.Runner\Gadwaly.Runner.csproj", "{0F45BC09-F67E-40AB-8861-176BFFD1DB1B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{4BE8A37D-C162-47F7-9140-E8FE074EC026}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BE8A37D-C162-47F7-9140-E8FE074EC026}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BE8A37D-C162-47F7-9140-E8FE074EC026}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEE3C098-764B-43AB-844F-155FF386F220}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEE3C098-764B-43AB-844F-155FF386F220}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEE3C098-764B-43AB-844F-155FF386F220}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEE3C098-764B-43AB-844F-155FF386F220}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F45BC09-F67E-40AB-8861-176BFFD1DB1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F45BC09-F67E-40AB-8861-176BFFD1DB1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F45BC09-F67E-40AB-8861-176BFFD1DB1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F45BC09-F67E-40AB-8861-176BFFD1DB1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
