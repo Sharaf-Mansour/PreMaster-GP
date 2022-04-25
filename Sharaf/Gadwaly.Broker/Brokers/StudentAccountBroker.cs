@@ -1,4 +1,7 @@
-﻿namespace Gadwaly.Broker.Brokers;
+﻿using System.Text;
+using Microsoft.Data.SqlClient.Server;
+
+namespace Gadwaly.Broker.Brokers;
 public class StudentAccountBroker : DataAccessBroker
 {
     public static async ValueTask<StudentArchive[]> GetAcceptedStudentsAsync()
@@ -15,10 +18,19 @@ public class StudentAccountBroker : DataAccessBroker
         => await DA.Execute("RejectStudent", new { ID }) > 0;
     public static async ValueTask<bool> AcceptStudentAsync(Guid ID)
         => await DA.Execute("AcceptStudent", new { ID }) > 0;
-    public static async ValueTask<bool> PrendingStudentListAsync(IDList[] StudentList)
-        => await DA.Execute("PrendingStudentList", new { StudentList }) == StudentList.Length;
-    public static async ValueTask<bool> RejectStudentListAsync(IDList[] StudentList)
-        => await DA.Execute("RejectStudentList", new { StudentList }) == StudentList.Length;
-    public static async ValueTask<bool> AcceptStudentListAsync(IDList[] StudentList)
-        => await DA.Execute("AcceptStudentList", new { StudentList }) == StudentList.Length;
+    public static async ValueTask<(bool, int)> PrendingStudentListAsync(IDList[] StudentList)
+    {
+        var Count = await DA.Execute("PrendingStudentList", new { StudentList = StudentList.Strigly() });
+        return (Count == StudentList.Length, Count);
+    }
+    public static async ValueTask<(bool, int)> RejectStudentListAsync(IDList[] StudentList)
+    {
+        var Count = await DA.Execute("RejectStudentList", new { StudentList = StudentList.Strigly() });
+        return (Count == StudentList.Length, Count);
+    }
+    public static async ValueTask<(bool, int)> AcceptStudentListAsync(IDList[] StudentList)
+    {
+        var Count = await DA.Execute("AcceptStudentList", new { StudentList = StudentList.Strigly() });
+        return (Count == StudentList.Length, Count);
+    }
 }

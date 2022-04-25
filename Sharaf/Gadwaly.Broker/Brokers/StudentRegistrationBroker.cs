@@ -32,4 +32,7 @@ public class StudentRegistrationBroker : DataAccessBroker
     /// <returns> Return Student based on ID  </returns>
     public static async ValueTask<StudentArchive?> GetStudentAsync(Guid StudentID)
     => await DA.GetRow<StudentArchive>("GetStudent", new { StudentID });
+
+
+
 }
