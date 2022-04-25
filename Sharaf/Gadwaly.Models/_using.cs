@@ -21,7 +21,7 @@ public static class ValidationExtensions
         {
             Errors =
             {
-                new ("error",$"type of {type?.GetType().ToString() ?? "Null Type"} ValidationResult is not yet implemented")
+                new ("error",$"type of {type.GetType()} ValidationResult is not yet implemented")
             }
         }
     };
