@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Gadwaly.Models\Gadwaly.Models.csproj" />
+    <ProjectReference Include="..\Gadwaly.Service\Gadwaly.Service.csproj" />
   </ItemGroup>
 
 </Project>
