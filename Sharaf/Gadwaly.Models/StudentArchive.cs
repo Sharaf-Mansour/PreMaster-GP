@@ -1,4 +1,6 @@
-﻿namespace Gadwaly.Models;
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Gadwaly.Models;
 public record class StudentArchive
 {
     public Guid StudentID { get; set; }
@@ -8,7 +10,7 @@ public record class StudentArchive
     public string Nationality { get; set; }
     public string NID { get; set; }
     public string Passport { get; set; }
-    public DateTime Birthday { get; set; }
+    public DateTime Birthday { get; set; } = DateTime.Now;
     public string PlaceOfBirth { get; set; }
     public bool Sex { get; set; }
     public string PlaceOfResidence { get; set; }
@@ -29,4 +31,6 @@ public record class StudentArchive
     public string StudentSSNImg { get; set; }
     public string StudentBirthCertImg { get; set; }
     public bool IsUpdate { get; set; }
+
+
 }

@@ -8,8 +8,8 @@ public class StudentArchiveValidator : AbstractValidator<StudentArchive>
         RuleFor(x => x.NameEnglish);
         RuleFor(x => x.IsForeigner);
         RuleFor(x => x.Nationality);
-        RuleFor(x => x.NID);
-        RuleFor(x => x.Passport);
+        RuleFor(x => x.NID).NotEmpty().When(x => !x.IsForeigner);
+        RuleFor(x => x.Passport).NotEmpty().When(x => x.IsForeigner);
         RuleFor(x => x.Birthday);
         RuleFor(x => x.PlaceOfBirth);
         RuleFor(x => x.Sex);
@@ -18,6 +18,7 @@ public class StudentArchiveValidator : AbstractValidator<StudentArchive>
         RuleFor(x => x.Company);
         RuleFor(x => x.Phone);
         RuleFor(x => x.Email);
+        RuleFor(x => x.LastQualification);
         RuleFor(x => x.Collage);
         RuleFor(x => x.University);
         RuleFor(x => x.Grade);
