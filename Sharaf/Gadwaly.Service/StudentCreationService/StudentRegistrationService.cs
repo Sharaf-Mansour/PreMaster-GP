@@ -3,24 +3,24 @@ using Gadwaly.Models;
 namespace Gadwaly.Service.StudentCreationService;
 public class StudentRegistrationService
 {
-    public async ValueTask<(bool, string)> CreateStudentAsync(StudentArchive Student)
+    public async ValueTask<ResponseType> CreateStudentAsync(StudentArchive? Student)
     {
-        var Msg = "Error: Student Not Valid";
-        var IsAdded = false;
-        var Validation = Student.Validate();
-        if (Validation.IsValid)
+        var response = ResponseType.IsNull;
+        if (Student is not null)
         {
-            Msg = "Error: Student Already Exist";
-            bool IsNewStudent = await StudentRegistrationBroker.GetStudentAsync(Student.StudentID) is null;
-            if (IsNewStudent)
+            response = ResponseType.IsNotValid;
+            if ((await Student.ValidateAsync()).IsValid)
             {
-                Msg = "Error In Database";
-                IsAdded = await StudentRegistrationBroker.CreateStudentAsync(Student);
-                if (IsAdded)
-                    Msg = "Success";
+                response = ResponseType.AlreadyExists; ;
+                if (await StudentRegistrationBroker.GetStudentAsync(Student!.StudentID) is null)
+                {
+                    response = ResponseType.IsDbError;
+                    if (await StudentRegistrationBroker.CreateStudentAsync(Student))
+                        response = ResponseType.Success;
+                }
             }
         }
-        return (IsAdded, Msg);
+        return response;
     }
     public async ValueTask<(bool, string)> ApproveStudentsAsync(IDList[]? Students)
     {

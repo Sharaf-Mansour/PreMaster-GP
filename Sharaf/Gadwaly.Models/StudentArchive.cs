@@ -3,7 +3,7 @@
 namespace Gadwaly.Models;
 public record class StudentArchive
 {
-    public Guid StudentID { get; set; }
+    public Guid StudentID { get; init; } = Guid.NewGuid();
     public string NameArabic { get; set; }
     public string NameEnglish { get; set; }
     public bool IsForeigner { get; set; }

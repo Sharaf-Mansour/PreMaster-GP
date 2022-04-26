@@ -4,12 +4,12 @@ global using Gadwaly.Models.Validation;
 namespace Gadwaly.Models;
 public static class ValidationExtensions
 {
-    public static ValidationResult Validate<T>(this T? type) => type switch
+    public static async ValueTask<ValidationResult> ValidateAsync<T>(this T? type) => type switch
     {
-        string => new DataValidator().Validate(type as string),
-        IDList => new IDListValidator().Validate(type as IDList),
-        LookUp => new LookUpValidator().Validate(type as LookUp),
-        StudentArchive => new StudentArchiveValidator().Validate(type as StudentArchive),
+        string => await new DataValidator().ValidateAsync(type as string),
+        IDList => await new IDListValidator().ValidateAsync(type as IDList),
+        LookUp => await new LookUpValidator().ValidateAsync(type as LookUp),
+        StudentArchive => await new StudentArchiveValidator().ValidateAsync(type as StudentArchive),
         null => new ValidationResult
         {
             Errors =
