@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Api\Brokers\Loggings\" />
+    <Folder Include="wwwroot\assets\svg\logos\Brands\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Arora.HappyCRUD" Version="1.0.6" />
+    <PackageReference Include="Blazored.FluentValidation" Version="2.1.0-preview.2" />
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="4.1.0" />
+  </ItemGroup>
+
+</Project>

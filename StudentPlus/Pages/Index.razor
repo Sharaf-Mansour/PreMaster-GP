@@ -1,0 +1,75 @@
+﻿@page "/"
+ <div class="d-flex align-items-center min-h-50">
+    <Header  OnClickCallback="()=>stateHasChanged()"/>
+    <main id="content" role="main" class="flex-grow-1">
+        <div class="container-fluid">
+            <div class="row">                        
+                @if (WFS.Page is "Register" or "ForgetPassword" or "Login" )
+                {
+                    <Banner />
+                }
+                @if (WFS.Page is "Register")
+                {
+                    <Register OnClickCallback="()=>stateHasChanged()" />
+                }
+                else if (WFS.Page is "Login")
+                {
+                    <Login OnClickCallback="()=>stateHasChanged()" />
+                }
+                else if (WFS.Page is "ForgetPassword")
+                {
+                    <ForgetPassword OnClickCallback="()=>stateHasChanged()" />
+                }
+                else {
+                    <ProfilePage OnClickCallback="()=>stateHasChanged()"/>
+                }
+            </div>
+        </div>
+        <Footer></Footer>
+    </main>
+
+</div>
+@code {
+    protected override void OnInitialized()
+    {
+
+        WFS.Page = "Login";
+
+
+        WFS.Page = WFS.StayLoggedin ? WFS.Page : "Login"; 
+        WFS.OnChange += StateHasChanged;
+
+    }
+    protected  override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        WFS.IsLoggedIn = (await BrowserStorage.GetAsync<bool>("IsLoggedIn")).Value;
+
+
+        //   WFS.Page    = (await BrowserStorage.GetAsync<string>("Page")).Value;       
+        // await   BrowserStorage.SetAsync("Page", WFS.Page ?? "Login");
+
+
+        if (firstRender)
+        {
+
+            WFS.Page =   WFS.StayLoggedin ?  (await  BrowserStorage.GetAsync<string>("Page")).Value : "Login"   ;
+            stateHasChanged();
+
+        }
+
+
+        if (!WFS.IsLoggedIn)
+        {
+                    await   BrowserStorage.SetAsync("Page",  "Login");
+                        WFS.Page = "Login";
+
+        }
+    }
+    async void stateHasChanged()
+    {
+ 
+        await   BrowserStorage.SetAsync("Page", WFS.Page ?? "Login");
+        StateHasChanged();
+    }
+ 
+}

@@ -1,0 +1,86 @@
+﻿<div class="col-lg-7 col-xl-8 d-flex justify-content-center align-items-center min-vh-lg-100">
+    <div class="flex-grow-1 mx-auto" style="max-width: 28rem;">
+        <div class="text-center mb-5 mb-md-7">
+            <h1 class="h2">Welcome to StudentPlus</h1>
+            <p>Fill out the form to get started.</p>
+        </div>
+        <EditForm EditContext="editContext" OnValidSubmit="SignUpAsync">
+            <FluentValidationValidator />
+
+            <div class="mb-3">
+                <label class="form-label" for="signupModalFormSignupEmail">Your email</label>
+                <InputText @bind-Value="model.Email" class="form-control form-control-lg" name="email" id="signupModalFormSignupEmail" placeholder="email@site.com" aria-label="email@site.com" />
+                <div>
+                    <ValidationMessage For="@(()=> model.Email)" />
+                </div>
+            </div>
+
+            <div class="js-add-field row mb-4">
+                <label class="form-label" for="signupModalFormSignupEmail">Your phone</label>
+                <div class="col-sm-9">
+                    <div class="input-group">
+                        <InputText @bind-Value="model.Phone" type="text" class="js-input-mask form-control" name="phone" id="phoneLabel" placeholder="+x(xxx)xxx-xx-xx" aria-label="+x(xxx)xxx-xx-xx" />
+                    </div>
+                    <ValidationMessage For="@(()=> model.Phone)" />
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="signupModalFormSignupPassword">Password</label>
+                <div class="input-group ">
+
+                    <InputText @bind-Value="model.Password" type="password" class=" form-control  form-control-lg " name="password" id="signupModalFormSignupPassword" placeholder="8+ characters required" aria-label="8+ characters required" />
+                </div>
+            </div>
+            <ValidationMessage For="@(()=> model.Password)" />
+
+            <div class="mb-3">
+                <label class="form-label" for="signupModalFormSignupConfirmPassword">Confirm password</label>
+                <div class="input-group  ">
+                    <InputText @bind-Value="model.ConfirmPassword" type="password" class=" form-control form-control-lg" name="confirmPassword" id="signupModalFormSignupConfirmPassword" placeholder="8+ characters required" aria-label="8+ characters required" />
+                </div>
+            </div>
+            <ValidationMessage For="@(()=> model.ConfirmPassword)" />
+            <div class="form-check mb-3">
+                <InputCheckbox @bind-Value="model.PrivacyCheck" type="checkbox" class="form-check-input" id="signupHeroFormPrivacyCheck" name="signupFormPrivacyCheck" />
+                <label class="form-check-label small" for="signupHeroFormPrivacyCheck"> By submitting this form I have read and acknowledged the <a href="" target="_blank">Privacy Policy</a></label>
+            </div>
+            <ValidationMessage For="@(()=> model.PrivacyCheck)" />
+
+            <div class="d-grid mb-3">
+                <button type="submit" class="btn btn-primary btn-lg">Sign up</button>
+            </div>
+            <div class="text-center">
+                <p>Already have an account? <a class="link" href="/" @onclick='(e)=>OnClick(e,"Login")'>Log in here</a></p>
+            </div>
+        </EditForm>
+    </div>
+</div>
+@code {
+    public EditContext? editContext;
+
+    protected override void OnInitialized()
+    {
+        editContext = new(model);
+        editContext?.SetFieldCssClassProvider(new CustomFieldClassProvider());
+    }
+    public StudentAccount model { get; set; } = new();
+
+    async Task SignUpAsync()
+    {
+        if (await model.IsValidAsync())
+        {
+          await  new UserEmailService().AddStudentAccountAsync(model);
+        }
+    }
+
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnClickCallback { get; set; }
+
+    void OnClick(MouseEventArgs e, string page)
+    {
+        WFS.Page = page;
+        OnClickCallback.InvokeAsync(e);
+    }
+    }
+

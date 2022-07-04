@@ -1,0 +1,36 @@
+﻿ @page "/admin"
+
+<div class="d-flex align-items-center min-h-50">
+
+@*    <AdminHeader OnClickCallback="()=>StateHasChanged()" />
+*@
+    <main id="content" role="main" class="flex-grow-1">
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                @if (WFS.Page is "AdminLogin")   
+                {
+
+                }          
+                else
+                {
+@*                    <AdminProfile OnClickCallback="()=>stateHasChanged()" />
+*@                }
+
+            </div>
+
+        </div>
+
+        <Footer></Footer>
+
+    </main>
+            </div>
+            @code{
+            protected override void OnInitialized()
+    {
+        WFS.Page = "AdminLogin";
+        WFS.OnChange += StateHasChanged;
+    }
+    }

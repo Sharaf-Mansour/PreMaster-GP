@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAnVZ/PT7G/UKvjnfP/Js9+AAAAAACAAAAAAAQZgAAAAEAACAAAAB4I93BMlvY93yqKagxqy9hjIFzlHXbixARPOielBMgGgAAAAAOgAAAAAIAACAAAACjEUOoOHl+S0u0jc3ljrOKzANjBsYQIS+aK/M1QAr/fyAAAABM5Ttr92FRda3657iAqi+99GoZFD+qShn/0tSMO9WRJkAAAACaCrXY89mu3aqjSYBvabY3xAwL3N//lYpIFDqykXga4RZWQhvNkKHot9v8xwb3NZ+/2mWhxjKHm5sLtCMgisZa</EncryptedPassword>
+    <_PublishTargetUrl>ftp://StudentPlus.somee.com/www.StudentPlus.somee.com</_PublishTargetUrl>
+    <History>True|2022-07-02T02:31:37.8586257Z;False|2022-07-02T04:15:54.4540519+02:00;False|2022-07-02T04:14:27.0574380+02:00;False|2022-07-02T04:14:11.3941256+02:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="appsettings.Development.json">
+      <publishTime>07/02/2022 03:53:09</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>07/02/2022 03:53:05</publishTime>
+    </File>
+    <File Include="Arora_CRUD.dll">
+      <publishTime>02/28/2022 21:44:06</publishTime>
+    </File>
+    <File Include="Azure.Core.dll">
+      <publishTime>10/28/2020 23:37:16</publishTime>
+    </File>
+    <File Include="Azure.Identity.dll">
+      <publishTime>11/13/2020 07:31:54</publishTime>
+    </File>
+    <File Include="Blazored.FluentValidation.dll">
+      <publishTime>06/05/2022 17:20:52</publishTime>
+    </File>
+    <File Include="Dapper.dll">
+      <publishTime>11/03/2021 16:07:40</publishTime>
+    </File>
+    <File Include="DeepCloner.dll">
+      <publishTime>10/14/2021 22:45:34</publishTime>
+    </File>
+    <File Include="FluentValidation.dll">
+      <publishTime>04/30/2022 15:59:56</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Authorization.dll">
+      <publishTime>11/18/2021 05:37:32</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Components.dll">
+      <publishTime>11/18/2021 05:36:42</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Components.Forms.dll">
+      <publishTime>11/18/2021 05:37:20</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Components.Web.dll">
+      <publishTime>11/18/2021 05:37:40</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Metadata.dll">
+      <publishTime>11/18/2021 05:35:48</publishTime>
+    </File>
+    <File Include="Microsoft.Bcl.AsyncInterfaces.dll">
+      <publishTime>09/13/2019 04:28:44</publishTime>
+    </File>
+    <File Include="Microsoft.Data.SqlClient.dll">
+      <publishTime>02/01/2022 00:34:26</publishTime>
+    </File>
+    <File Include="Microsoft.Identity.Client.dll">
+      <publishTime>10/22/2020 19:46:26</publishTime>
+    </File>
+    <File Include="Microsoft.Identity.Client.Extensions.Msal.dll">
+      <publishTime>10/29/2020 17:40:20</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.JsonWebTokens.dll">
+      <publishTime>10/13/2020 02:21:34</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.Logging.dll">
+      <publishTime>10/13/2020 02:23:12</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.Protocols.dll">
+      <publishTime>10/13/2020 02:25:30</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.Protocols.OpenIdConnect.dll">
+      <publishTime>10/13/2020 02:31:32</publishTime>
+    </File>
+    <File Include="Microsoft.IdentityModel.Tokens.dll">
+      <publishTime>10/13/2020 02:27:48</publishTime>
+    </File>
+    <File Include="Microsoft.JSInterop.dll">
+      <publishTime>11/18/2021 05:36:42</publishTime>
+    </File>
+    <File Include="Microsoft.Win32.SystemEvents.dll">
+      <publishTime>10/19/2020 20:40:26</publishTime>
+    </File>
+    <File Include="runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll">
+      <publishTime>10/19/2020 20:49:58</publishTime>
+    </File>
+    <File Include="runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll">
+      <publishTime>02/01/2022 00:34:26</publishTime>
+    </File>
+    <File Include="runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll">
+      <publishTime>11/17/2021 18:43:48</publishTime>
+    </File>
+    <File Include="runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll">
+      <publishTime>11/17/2021 18:43:48</publishTime>
+    </File>
+    <File Include="runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll">
+      <publishTime>11/17/2021 18:43:48</publishTime>
+    </File>
+    <File Include="runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll">
+      <publishTime>11/17/2021 18:43:48</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll">
+      <publishTime>10/19/2020 20:52:12</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll">
+      <publishTime>10/19/2020 20:53:02</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll">
+      <publishTime>10/19/2020 20:53:36</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll">
+      <publishTime>02/01/2022 00:34:26</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll">
+      <publishTime>10/19/2020 20:52:44</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll">
+      <publishTime>10/19/2020 20:49:30</publishTime>
+    </File>
+    <File Include="StudentPlus.deps.json">
+      <publishTime>07/02/2022 04:16:47</publishTime>
+    </File>
+    <File Include="StudentPlus.dll">
+      <publishTime>07/02/2022 04:16:47</publishTime>
+    </File>
+    <File Include="StudentPlus.exe">
+      <publishTime>07/02/2022 04:16:47</publishTime>
+    </File>
+    <File Include="StudentPlus.pdb">
+      <publishTime>07/02/2022 04:16:47</publishTime>
+    </File>
+    <File Include="StudentPlus.runtimeconfig.json">
+      <publishTime>07/02/2022 04:16:48</publishTime>
+    </File>
+    <File Include="System.Configuration.ConfigurationManager.dll">
+      <publishTime>10/19/2020 20:52:30</publishTime>
+    </File>
+    <File Include="System.Drawing.Common.dll">
+      <publishTime>10/19/2020 20:50:02</publishTime>
+    </File>
+    <File Include="System.IdentityModel.Tokens.Jwt.dll">
+      <publishTime>10/13/2020 02:20:12</publishTime>
+    </File>
+    <File Include="System.IO.Pipelines.dll">
+      <publishTime>11/17/2021 20:09:48</publishTime>
+    </File>
+    <File Include="System.Runtime.Caching.dll">
+      <publishTime>10/19/2020 20:52:34</publishTime>
+    </File>
+    <File Include="System.Security.Cryptography.ProtectedData.dll">
+      <publishTime>10/19/2020 20:52:26</publishTime>
+    </File>
+    <File Include="System.Security.Permissions.dll">
+      <publishTime>10/19/2020 20:52:36</publishTime>
+    </File>
+    <File Include="System.Windows.Extensions.dll">
+      <publishTime>10/19/2020 20:53:38</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>07/02/2022 04:16:53</publishTime>
+    </File>
+    <File Include="wwwroot/assets/css/docs.min.css">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/css/snippets.min.css">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/css/theme.min.css">
+      <publishTime>03/20/2022 09:08:47</publishTime>
+    </File>
+    <File Include="wwwroot/assets/img/160x160/img9.jpg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/img/160x160/img99.jpg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/img/380x360/img10.jpg">
+      <publishTime>06/29/2022 01:10:05</publishTime>
+    </File>
+    <File Include="wwwroot/assets/js/myherojs.min.js">
+      <publishTime>05/19/2022 00:00:36</publishTime>
+    </File>
+    <File Include="wwwroot/assets/js/theme-custom.js">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/js/theme.min.js">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/json/docs-search.json">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/json/flags.json">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/json/snippets-search.json">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/brands/FGSSR.svg">
+      <publishTime>05/18/2022 23:48:56</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/brands/FGSSR_1.svg">
+      <publishTime>05/18/2022 23:49:58</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/brands/microsoft.svg">
+      <publishTime>05/18/2022 23:17:00</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/brands/microsoft_teams.svg">
+      <publishTime>05/18/2022 23:16:56</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/brands/office_365.svg">
+      <publishTime>05/18/2022 23:14:43</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/card-1.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/card-10.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/card-11.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/card-12.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/card-13.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/card-14.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/card-15.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/card-16.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/card-17.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/card-2.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/card-4.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/card-5.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/card-6.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/card-7.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/card-8.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/card-9.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/circled-stripe.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/dots-lg.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/dots.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/isometric-squares-light.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/map-pin.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/popover-bottom.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/popover-left.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/popover-right.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/popover-top.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/quote.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/shape-1.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/shape-2.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/shape-3.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/shape-4.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/shape-5.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/shape-6.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/shape-7.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/three-pointers.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/components/wave-pattern-light.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-accordion.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-add-field.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-alerts.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-avatars.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-badge.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-basic-forms.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-breadcrumb.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-bs-icons.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-button.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-buttons.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-cards.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-chartjs.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-checks-and-switches.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-circles.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-collapse.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-column-divider.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-count-characters.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-countdown.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-devices.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-divider.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-dropdowns.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-dropzone.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-duotone-icons.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-file-attachments.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-fslightbox.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-go-to.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-header.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-icons.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-illustrations.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-input-group.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-input-mask.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-legend-indicator.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-list-group.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-lists.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-maps-leaflet.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-mega-menu.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-modal.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-navs.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-offcanvas.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-page-header.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-pagination.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-popovers.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-progress.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-quantity-counter.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-quill.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-range-slider.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-scrollspy.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-select.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-shapes.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-show-animation.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-sorting.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-spinners.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-step-forms.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-steps.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-sticky-block.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-swiper.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-switch.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-tab.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-tables.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-text-highlight.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-toasts.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-toggle-password.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-toggle-state.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-toggle-switch.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-tooltips.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-typedjs.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-typography.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-video-bg.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/docs-video-player.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-blogs-grid.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-blogs-list.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-breadcrumb.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-calendar-view.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-cards-grid.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-cards-list.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-clients.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-collapse-accordion.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-comments.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-contact-sections.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-content-sections.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-countdown.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-cta.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-directory-grid.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-directory-list.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-ecommerce.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-faq.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-features-general.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-features-navs.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-features-stats.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-features-step.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-feedback-and-reviews.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-footer.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-form-layouts-authentication.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-form-layouts-feedback.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-form-layouts-filters.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-form-layouts-search.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-form-layouts-subscribe.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-forms-account.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-forms-authentication.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-forms-directory.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-forms-ecommerce.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-forms-feedback.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-forms-filters.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-forms-search.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-forms-subscribe.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-forms-wizard-and-steps.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-gallery.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-headers.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-hero-sections.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-icon-blocks.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-lists.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-modals.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-navbar.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-notification.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-portfolio.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-pricing.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-sidebar-examples.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-tables.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-team-sections.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-testimonials.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/design-system/snippets-user-profile.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/account-creation.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/add-file.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/app-wreath.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/apps.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/avatar-group.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/browse.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/calendar.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/circle-small.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/circle-triple.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/circle.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/communication.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/docs-frame.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/docs-main-page.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/document-sheet.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/empty-cart.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/empty-state-no-data.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/farm-land.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/flat-house.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/growing-business.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/layouts-frame.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/master-adobe-ai-book.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/medal.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/multi-family-house.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/oc-add-card.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/oc-address.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/oc-building-apps.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/oc-chatting.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/oc-collaboration.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/oc-empty-cart.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/oc-error.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/oc-growing.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/oc-hi-five.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/oc-looking-for-answers.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/oc-lost.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/oc-maintenance.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/oc-megaphone.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/oc-money-profits.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/oc-on-the-go.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/oc-peeking.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/oc-person-1.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/oc-person-2.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/oc-person-3.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/oc-project-development.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/oc-protected-card.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/oc-relaxing.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/oc-return.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/oc-to-do.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/oc-truck.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/oc-yelling.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/pro-account.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/review-rating-shield.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/small-house.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/snippets-frame.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/snippets-main-page.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/star-half.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/star-muted.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/star.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/stars.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/top-vendor.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/illustrations/visa-card.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/logos/logo-short-white.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/logos/logo-short.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/logos/logo-vertical-white.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/logos/logo-vertical.svg">
+      <publishTime>02/13/2022 14:37:50</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/logos/logo-white.svg">
+      <publishTime>05/18/2022 23:47:12</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/logos/logo.svg">
+      <publishTime>05/15/2022 17:24:33</publishTime>
+    </File>
+    <File Include="wwwroot/assets/svg/logos/microsoft - Copy.svg">
+      <publishTime>05/18/2022 23:17:00</publishTime>
+    </File>
+    <File Include="wwwroot/css/bootstrap/bootstrap.min.css">
+      <publishTime>06/17/2022 19:36:12</publishTime>
+    </File>
+    <File Include="wwwroot/css/bootstrap/bootstrap.min.css.map">
+      <publishTime>06/17/2022 19:36:12</publishTime>
+    </File>
+    <File Include="wwwroot/css/open-iconic/FONT-LICENSE">
+      <publishTime>06/17/2022 19:36:12</publishTime>
+    </File>
+    <File Include="wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css">
+      <publishTime>06/17/2022 19:36:12</publishTime>
+    </File>
+    <File Include="wwwroot/css/open-iconic/font/fonts/open-iconic.eot">
+      <publishTime>06/17/2022 19:36:12</publishTime>
+    </File>
+    <File Include="wwwroot/css/open-iconic/font/fonts/open-iconic.otf">
+      <publishTime>06/17/2022 19:36:12</publishTime>
+    </File>
+    <File Include="wwwroot/css/open-iconic/font/fonts/open-iconic.svg">
+      <publishTime>06/17/2022 19:36:12</publishTime>
+    </File>
+    <File Include="wwwroot/css/open-iconic/font/fonts/open-iconic.ttf">
+      <publishTime>06/17/2022 19:36:12</publishTime>
+    </File>
+    <File Include="wwwroot/css/open-iconic/font/fonts/open-iconic.woff">
+      <publishTime>06/17/2022 19:36:12</publishTime>
+    </File>
+    <File Include="wwwroot/css/open-iconic/ICON-LICENSE">
+      <publishTime>06/17/2022 19:36:12</publishTime>
+    </File>
+    <File Include="wwwroot/css/open-iconic/README.md">
+      <publishTime>06/17/2022 19:36:12</publishTime>
+    </File>
+    <File Include="wwwroot/css/site.css">
+      <publishTime>06/29/2022 03:25:43</publishTime>
+    </File>
+    <File Include="wwwroot/favicon.ico">
+      <publishTime>06/17/2022 19:36:12</publishTime>
+    </File>
+    <File Include="wwwroot/StudentPlus.styles.css">
+      <publishTime>07/01/2022 09:30:51</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

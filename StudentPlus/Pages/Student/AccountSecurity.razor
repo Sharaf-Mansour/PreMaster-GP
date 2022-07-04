@@ -1,0 +1,119 @@
+﻿<div class="col-lg-9">
+    <div class="d-grid gap-3 gap-lg-5">
+        <div class="card">
+            <div class="card-header border-bottom">
+                <h5 class="card-header-title">Password</h5>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="row mb-4">
+                        <label for="currentPasswordLabel" class="col-sm-3 col-form-label form-label">Current password</label>
+
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" name="currentPassword" id="currentPasswordLabel" placeholder="Enter current password" aria-label="Enter current password">
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <label for="newPassword" class="col-sm-3 col-form-label form-label">New password</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" name="newPassword" id="newPassword" placeholder="Enter new password" aria-label="Enter new password">
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <label for="confirmNewPasswordLabel" class="col-sm-3 col-form-label form-label">Confirm new password</label>
+                        <div class="col-sm-9">
+                            <div class="mb-3">
+                                <input type="password" class="form-control" name="confirmNewPassword" id="confirmNewPasswordLabel" placeholder="Confirm your new password" aria-label="Confirm your new password">
+                            </div>
+                            <h5>Password requirements:</h5>
+                            <p class="card-text small">Ensure that these requirements are met:</p>
+                            <ul class="small">
+                                <li>Minimum 8 characters long - the more, the better</li>
+                                <li>At least one lowercase character</li>
+                                <li>At least one uppercase character</li>
+                                <li>At least one number, symbol, or whitespace character</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end gap-3">
+                        <a class="btn btn-white" href="javascript:;">Cancel</a>
+                        <button type="submit" class="btn btn-primary">Update Password</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header border-bottom">
+                <h5 class="card-header-title">Social accounts</h5>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="list-group list-group-flush list-group-no-gutters">
+                        <div class="list-group-item">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="bi-github list-group-icon"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <div class="row align-items-center">
+                                        <div class="col-sm mb-1 mb-sm-0">
+                                            <h6 class="mb-1">GitHub</h6>
+                                            <small class="text-secondary small">Not connected</small>
+                                        </div>
+                                        <div class="col-sm-auto">
+                                            <a class="btn btn-white btn-xs" href="javascript:;">edit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-group-item">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="bi-linkedin list-group-icon"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <div class="row align-items-center">
+                                        <div class="col-sm mb-1 mb-sm-0">
+                                            <h6 class="mb-1">Linkedin</h6>
+                                            <a class="link-sm" href="#">www.linkedin.com/mahamedsharaf</a>
+                                        </div>
+                                        <div class="col-sm-auto">
+                                            <a class="btn btn-white btn-xs" href="javascript:;">edit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@code {
+    public EditContext? editContext;
+
+    protected override void OnInitialized()
+    {
+        editContext = new(model);
+        editContext?.SetFieldCssClassProvider(new CustomFieldClassProvider());
+                WFS.OnChange += StateHasChanged;
+
+    }
+    public StudentLogin model { get; set; } = new();
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnClickCallback { get; set; }
+
+    void OnClick(MouseEventArgs e, string page)
+    {
+        WFS.Page = page;
+        OnClickCallback.InvokeAsync(e);
+    }
+    async void stateHasChanged()
+    {
+
+       await   BrowserStorage.SetAsync("Page", WFS.Page ?? "Login");
+        StateHasChanged();
+    }
+    }

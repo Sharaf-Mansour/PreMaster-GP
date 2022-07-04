@@ -1,0 +1,71 @@
+
+<header id="header" class=" navbar navbar-expand navbar-light navbar-absolute-top   ">
+    <div class="container-fluid">
+        <nav class="  flex-column w-100 zi-999 ">
+            <a class=" float-start  ps-10 " href="" aria-label="Front">
+                <img class="p-2" width="145px" height="72px" src='@(WFS.IsLoggedIn ? "./assets/svg/logos/logo-white.svg" : "./assets/svg/logos/logo.svg")' alt="Logo">
+            </a>
+            @if (WFS.IsLoggedIn)
+            {
+                <div class="navbar-dark bg-dark   zi-0" style="margin-top:0;background-image: url(./assets/svg/components/wave-pattern-light.svg);">
+                    <div class="container-fluid   overflow-auto p-0" dir="rtl">
+                        <ul class="navbar-nav bg-white position-absolute w-100  " style="top:0">
+                            <a id="accountMegaMenu" class="fs-5 w-100  pe-7 me-10 active " href="/" role="button" aria-expanded="false">Student ID 02022336</a>
+                            <a class=" float-start bg-white   ps-2  " href="" aria-label="Front">
+                                <img class="p-2" width="145px" height="72px" src='@(!WFS.IsLoggedIn ? "./assets/svg/logos/logo-white.svg" : "./assets/svg/logos/logo.svg")' alt="Logo">
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="  p-7">
+                        <div class="row align-items-center ">
+                            <div class="  col  ">
+                                <div class="d-none d-lg-block">
+                                    <h1 class="h2 text-white">Study programs</h1>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="  float-end me-2">
+                                        <a class="btn btn-soft-light" href="/" @onclick='((e)=>OnClick( e, "Login"))'>
+                                            Log out
+                                        </a>
+                                    </div>
+                                </div>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb breadcrumb-light mb-0">
+                                        <li class="breadcrumb-item">Student Plus</li>
+                                        <li class="breadcrumb-item active" aria-current="page">@(Regex.Replace(WFS.Page ?? "", @"((?<=\p{Ll})\p{Lu})|((?!\A)\p{Lu}(?>\p{Ll}))", " $0"))                                  
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </nav>
+    </div>
+</header>
+@code {
+    protected override void OnInitialized()
+    {
+        WFS.OnChange += StateHasChanged;
+ 
+    }
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnClickCallback { get; set; }
+    async void OnClick(MouseEventArgs e, string page)
+    {
+        if(page is "Login")
+        {
+            await   BrowserStorage.SetAsync("IsLoggedIn", false);
+            WFS.IsLoggedIn = false;
+        }
+        WFS.Page = page;
+     await   OnClickCallback.InvokeAsync(e);
+    }
+    async void stateHasChanged()
+    {
+
+         await   BrowserStorage.SetAsync("Page", WFS.Page ?? "Login");
+        StateHasChanged();
+    }
+    }
