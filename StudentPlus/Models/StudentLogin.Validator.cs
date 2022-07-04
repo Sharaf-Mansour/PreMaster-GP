@@ -1,11 +1,11 @@
 ﻿namespace StudentPlus.Models;
-public partial class StudentLogin
+public partial class AccountLogin
 {
-    public class StudentLoginValidator : AbstractValidator<StudentLogin>
+    public class AccountLoginValidator : AbstractValidator<AccountLogin>
     {
         private UserEmailService UserEmailService => new();
         string email;
-        public StudentLoginValidator()
+        public AccountLoginValidator()
         {
             RuleFor(x => x.Email)
                .MustAsync(async (Email, Token) => await UserEmailService.RetriveUserAccountByEmailAsync(email = Email))

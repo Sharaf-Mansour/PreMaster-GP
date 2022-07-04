@@ -1,5 +1,5 @@
 ﻿namespace StudentPlus.Models;
-public partial class StudentAccount : StudentLogin
+public partial class StudentAccount : AccountLogin
 {
     public string? Phone { get; set; }
     public string? ConfirmPassword { get; set; }
