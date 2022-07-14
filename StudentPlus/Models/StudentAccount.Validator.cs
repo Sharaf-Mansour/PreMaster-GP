@@ -22,8 +22,8 @@ public partial class StudentAccount
             RuleFor(x => x.Password).NotEmpty().WithMessage("Password is required");
             RuleFor(x => x.Password).MinimumLength(6).WithMessage("Password must be at least 6 characters long");
             RuleFor(x => x.Password).MaximumLength(20).WithMessage("Password must be at most 20 characters long");
-            RuleFor(x => x.Password).Matches(@"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$")
-            .WithMessage("Password must contain at least one lowercase letter, one uppercase letter, one number and one special character");
+            RuleFor(x => x.Password).Matches(@"^(?=.?[A-Z](?=.?[a-z]))(?=.*?[0-9])")
+            .WithMessage("Password must contain at least one lowercase letter, one uppercase letter and one number");
             RuleFor(x => x.Password).NotEqual(x => x.Email).When(x => !string.IsNullOrWhiteSpace(x.Password)).WithMessage("Password must not be the same as email");
             RuleFor(x => x.Password).NotEqual(x => x.Phone).When(x => !string.IsNullOrWhiteSpace(x.Password)).WithMessage("Password must not be the same as phone");
             //RuleFor(x => x.Password).Equal(x => x.ConfirmPassword).WithMessage("Password and confirm password must be the same");
