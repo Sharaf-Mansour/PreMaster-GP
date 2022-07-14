@@ -12,7 +12,7 @@
 
                 @if (WFS.Page is "AdminLogin")   
                 {
-
+                    <AdminLogin OnClickCallback="()=>StateHasChanged()" />
                 }          
                 else
                 {
@@ -27,10 +27,21 @@
 
     </main>
             </div>
-            @code{
-            protected override void OnInitialized()
+@code{
+    protected override void OnInitialized()
     {
         WFS.Page = "AdminLogin";
         WFS.OnChange += StateHasChanged;
     }
+    async void stateHasChanged()
+    {
+      if (!WFS.IsLoggedIn)
+        {
+           await BrowserStorage.SetAsync("IsLoggedIn", false);
+           await BrowserStorage.SetAsync("Page", "AdminLogin");
+           WFS.Page = "AdminLogin";
+        }
+        WFS.NotifyStateChanged();
+        StateHasChanged();
     }
+}

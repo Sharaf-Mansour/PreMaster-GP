@@ -153,16 +153,13 @@
     }
     async void stateHasChanged()
     {
-
-        if (!WFS.IsLoggedIn)
+          if (!WFS.IsLoggedIn)
         {
             await BrowserStorage.SetAsync("IsLoggedIn", false);
             await BrowserStorage.SetAsync("Page", "Login");
             WFS.Page = "Login";
         }
-
-
         WFS.NotifyStateChanged();
         StateHasChanged();
     }
-    }
+}

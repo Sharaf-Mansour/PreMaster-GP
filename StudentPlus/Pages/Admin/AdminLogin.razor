@@ -1,5 +1,62 @@
-﻿<h3>AdminLogin</h3>
-
+﻿<div class="col-lg-7 col-xl-8 d-flex justify-content-center align-items-center min-vh-lg-100">
+    <div class="flex-grow-1 mx-auto" style="max-width: 28rem;">
+        <div class="text-center mb-5 mb-md-7">
+            <h1 class="h2">Welcome back!</h1>
+        </div>
+        <EditForm EditContext="editContext" OnValidSubmit="LoginAsync">
+            <FluentValidationValidator />
+            <div class="mb-4">
+                <label class="form-label" for="signupModalFormLoginEmail">Your email</label>
+                <InputText @bind-Value="model.Email" class="form-control form-control-lg" name="email"
+                    id="signupModalFormLoginEmail" placeholder="email@site.com" aria-label="email@site.com" />
+            </div>
+            <ValidationMessage For="@(()=> model.Email)" />
+            <div class="mb-4">
+                <div class="d-flex justify-content-between align-items-center">
+                    <label class="form-label" for="signupModalFormLoginPassword">Password</label>
+                 </div>
+                <div class="input-group">
+                    <InputText @bind-Value="model.Password" type="password" class="form-control form-control-lg"
+                        name="password" id="signupModalFormLoginPassword" placeholder="Enter password" minlength="6" />
+                </div>
+                <ValidationMessage For="@(()=> model.Password)" />
+            </div>
+            <div class="d-grid mb-3">
+                <button type="submit" class="btn btn-primary btn-lg">Log in</button>
+            </div>
+  
+        </EditForm>
+    </div>
+</div>
 @code {
-
+    public EditContext? editContext;
+    public AccountLogin model { get; set; } = new();
+    [Parameter]
+    public AccountType accountType { get; set; }
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnClickCallback { get; set; }
+    protected override void OnInitialized()
+    {
+        editContext = new(model);
+        editContext?.SetFieldCssClassProvider(new CustomFieldClassProvider());
+        WFS.OnChange += StateHasChanged;
+    }
+    async Task LoginAsync()
+    {
+        if (await model.IsValidAsync())
+        {
+            WFS.IsLoggedIn = true;
+            await BrowserStorage.SetAsync("IsLoggedIn", true);
+            WFS.Page = "AdminProfile";
+            await BrowserStorage.SetAsync("Page", "AdminProfile");
+            WFS.AccountType = accountType;
+            WFS.NotifyStateChanged();
+            StateHasChanged();
+        }
+    }
+    void OnClick(MouseEventArgs e, string page)
+    {
+        WFS.Page = page;
+        OnClickCallback.InvokeAsync(e);
+    }
 }
