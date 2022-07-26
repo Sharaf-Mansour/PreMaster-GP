@@ -17,7 +17,7 @@ public partial class AccountLogin
            .EmailAddress().When(x => !string.IsNullOrWhiteSpace(x.Email))
            .WithMessage("Format of mail is not correct");
             RuleFor(x => x.Password).MustAsync(async (Model, Token) => (await UserEmailService.RetriveUserAccountByEmailAndPasswordAsync(email, Model)).IsCorrect)
-            .WhenAsync(async (Model, Token) => await UserEmailService.RetriveUserAccountByEmailAsync(Model.Email))
+            .WhenAsync(async (Model, Token) => await UserEmailService.RetriveUserAccountByEmailAsync(email = Model.Email))
                 .WithMessage("Wrong Password");
 
         }

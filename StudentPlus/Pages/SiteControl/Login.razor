@@ -9,7 +9,7 @@
             <div class="mb-4">
                 <label class="form-label" for="signupModalFormLoginEmail">Your email</label>
                 <InputText @bind-Value="model.Email" class="form-control form-control-lg" name="email"
-                    id="signupModalFormLoginEmail" placeholder="email@site.com" aria-label="email@site.com" />
+                           id="signupModalFormLoginEmail" placeholder="email@site.com" aria-label="email@site.com" />
             </div>
             <ValidationMessage For="@(()=> model.Email)" />
             <div class="mb-4">
@@ -19,16 +19,24 @@
                 </div>
                 <div class="input-group">
                     <InputText @bind-Value="model.Password" type="password" class="form-control form-control-lg"
-                        name="password" id="signupModalFormLoginPassword" placeholder="Enter password" minlength="6" />
+                               name="password" id="signupModalFormLoginPassword" placeholder="Enter password" minlength="6" />
                 </div>
                 <ValidationMessage For="@(()=> model.Password)" />
+            </div>
+            <div class="mb-2">
+                <InputCheckbox @bind-Value="WFS.StayLoggedin" name="rememberMe" id="signupModalFormLoginRememberMe" />
+                <label class="form-check-label" for="signupModalFormLoginRememberMe">Remember me</label>
             </div>
             <div class="d-grid mb-3">
                 <button type="submit" class="btn btn-primary btn-lg">Log in</button>
             </div>
             <div class="text-center">
-                <p>Don't have an account yet? <a class="link" href="/" @onclick='(e)=>OnClick(e,"Register")'>Sign up
-                        here</a></p>
+                <p>
+                    Don't have an account yet? <a class="link" href="/" @onclick='(e)=>OnClick(e,"Register")'>
+                        Sign up
+                        here
+                    </a>
+                </p>
             </div>
         </EditForm>
     </div>
@@ -51,8 +59,17 @@
     {
         if (await model.IsValidAsync())
         {
+            WFS.Model = await new UserEmailService().RetriveFullUserAccountByEmailAsync(model.Email);
             WFS.IsLoggedIn = true;
-            await BrowserStorage.SetAsync("IsLoggedIn", true);
+            await BrowserStorage.SetAsync("IsLoggedIn", false);
+                            await BrowserStorage.SetAsync("StayLoggedin", WFS.StayLoggedin);
+
+            if (WFS.StayLoggedin)
+            {
+                await BrowserStorage.SetAsync("User", WFS.Model);
+                await BrowserStorage.SetAsync("IsLoggedIn", WFS.IsLoggedIn);
+            }
+
             WFS.Page = "StudentProfile";
             await BrowserStorage.SetAsync("Page", "StudentProfile");
             WFS.AccountType = accountType;

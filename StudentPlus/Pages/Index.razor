@@ -37,13 +37,17 @@
     }
     protected  override async Task OnAfterRenderAsync(bool firstRender)
     {
+     if( WFS.StayLoggedin = (await BrowserStorage.GetAsync<bool>("StayLoggedin")).Value)
         WFS.IsLoggedIn = (await BrowserStorage.GetAsync<bool>("IsLoggedIn")).Value;
-        //   WFS.Page    = (await BrowserStorage.GetAsync<string>("Page")).Value;       
-        // await   BrowserStorage.SetAsync("Page", WFS.Page ?? "Login");
+ 
+        
+        WFS.Page    = (await BrowserStorage.GetAsync<string>("Page")).Value;       
+       await   BrowserStorage.SetAsync("Page", WFS.Page ?? "Login");
         if (firstRender)
         {
 
             WFS.Page =   WFS.StayLoggedin ?  (await  BrowserStorage.GetAsync<string>("Page")).Value : "Login"   ;
+            WFS.Model = WFS.StayLoggedin ? (await BrowserStorage.GetAsync<StudentAccount>("User")).Value : new StudentAccount();
             stateHasChanged();
         }
         if (!WFS.IsLoggedIn)

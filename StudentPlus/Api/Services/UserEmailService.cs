@@ -7,5 +7,9 @@ namespace StudentPlus.Api.Services
         public async ValueTask<bool> RetriveUserAccountByEmailAsync(string Email) => await this.storageBroker.SelectUserAccountByEmailAsync(Email: Email);
         public async ValueTask<(bool IsCorrect, int ID)> RetriveUserAccountByEmailAndPasswordAsync(string Email, string Password) => await this.storageBroker.SelectUserAccountByEmailAndPasswordAsync(Email: Email, Password: Password);
         public async ValueTask<int> AddStudentAccountAsync(StudentAccount Model) => await this.storageBroker.InsertStudentAccountAsync(Model: Model);
+
+        public async ValueTask<StudentAccount> RetriveFullUserAccountByEmailAsync(string Email) => await this.storageBroker.SelectFullUserAccountByEmailAsync(Email: Email);
+
+
     }
 }
