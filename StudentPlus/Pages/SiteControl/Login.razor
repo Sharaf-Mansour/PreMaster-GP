@@ -62,8 +62,7 @@
             WFS.Model = await new UserEmailService().RetriveFullUserAccountByEmailAsync(model.Email);
             WFS.IsLoggedIn = true;
             await BrowserStorage.SetAsync("IsLoggedIn", false);
-                            await BrowserStorage.SetAsync("StayLoggedin", WFS.StayLoggedin);
-
+            await BrowserStorage.SetAsync("StayLoggedin", WFS.StayLoggedin);
             if (WFS.StayLoggedin)
             {
                 await BrowserStorage.SetAsync("User", WFS.Model);

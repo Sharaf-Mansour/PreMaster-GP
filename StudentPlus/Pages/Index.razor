@@ -38,9 +38,7 @@
     protected  override async Task OnAfterRenderAsync(bool firstRender)
     {
      if( WFS.StayLoggedin = (await BrowserStorage.GetAsync<bool>("StayLoggedin")).Value)
-        WFS.IsLoggedIn = (await BrowserStorage.GetAsync<bool>("IsLoggedIn")).Value;
- 
-        
+        WFS.IsLoggedIn = (await BrowserStorage.GetAsync<bool>("IsLoggedIn")).Value;     
         WFS.Page    = (await BrowserStorage.GetAsync<string>("Page")).Value;       
        await   BrowserStorage.SetAsync("Page", WFS.Page ?? "Login");
         if (firstRender)
