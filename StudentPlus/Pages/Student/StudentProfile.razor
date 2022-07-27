@@ -35,16 +35,159 @@
                 <h4 class="card-header-title">Basic info</h4>
             </div>
             <div class="card-body">
+                <div class="row mb-4">
+                    <label class="col-sm-3 col-form-label form-label">Profile photo</label>
+                    <div class="col-sm-9">
+                        <div class="d-flex align-items-center">
+                            <label class="avatar avatar-xl avatar-circle" for="avatarUploader">
+                                <img id="avatarImg" class="avatar-img  " style="border-radius:50%" src='@((model.ProfilePicture)??"./assets/img/160x160/img99.jpg")' alt="Image Description">
+                            </label>
+                            <div class="d-grid d-sm-flex gap-2 ms-4">
+                                <div class="form-attachment-btn btn btn-primary btn-sm">
+                                    Upload photo
+                                    <input type="file" class="js-file-attach form-attachment-btn-label" id="avatarUploader">
+                                </div>
+                                <button type="button" class="js-file-attach-reset-img btn btn-white btn-sm">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <label for="firstNameLabel" class="col-sm-3 col-form-label form-label">Full name in English <i class="bi-question-circle text-body ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Will be used as display name"></i></label>
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="firstName" id="firstNameLabel" placeholder="English FullName" aria-label="Clarice" @bind="model.FullNameEN">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <label for="firstNameLabel" class="col-sm-3 col-form-label form-label">Full name in Arabic <i class="bi-question-circle text-body ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Will be used as formal name"></i></label>
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="firstName" id="firstNameLabel" placeholder="Arabic FullName" aria-label="Clarice" @bind="model.FullNameArabic">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <label for="emailLabel" class="col-sm-3 col-form-label form-label">Email</label>
+                    <div class="col-sm-9">
+                        <input type="email" class="form-control" name="email" id="emailLabel" placeholder="example@example.com" aria-label="example@example.com" @bind="model.Email">
+                    </div>
+                </div>
+                <div class="js-add-field row mb-4">
+                    <label for="phoneLabel" class="col-sm-3 col-form-label form-label">Phone</label>
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <input type="text" class="js-input-mask form-control" name="phone" id="phoneLabel" placeholder="+x(xxx)xxx-xx-xx" aria-label="+x(xxx)xxx-xx-xx" @bind="model.Phone">
+                        </div>
+                    </div>
+                </div>
+                 <div class="row mb-4">
+                        <label for="genderLabel" class="col-sm-3 col-form-label form-label">Gender</label>
+                        <div class="col-sm-9">
+                            <div class="tom-select-custom mb-3">
+                                <select class="js-select form-select" id="genderLabel" @bind="model.Gender">
+                                    <option value="" disabled selected>Select Gender</option>
+                                    <option value="0">Male</option>
+                                    <option value="1" >Female</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                <div class="card-footer pt-0">
+                    <div class="d-flex justify-content-end gap-3">
+                        <a class="btn btn-white" href="javascript:;">Cancel</a>
+                        <a class="btn btn-primary" href="javascript:;">Save changes</a>
+                    </div>
+                </div>
+            </div>
+            <div id="editAddressCard" class="card">
+                <div class="card-header border-bottom">
+                    <h4 class="card-header-title">Address</h4>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="row mb-4">
+                            <label for="locationLabel" class="col-sm-3 col-form-label form-label">Location</label>
+                            <div class="col-sm-9">
+                                <div class="tom-select-custom mb-3">
+                                    <select class="js-select form-select" id="locationLabel" @bind="model.Country">
+                                    <option value="" disabled selected>Select Country</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" name="city" id="cityLabel" placeholder="City" aria-label="City" @bind="model.City" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <label for="addressLine1Label" class="col-sm-3 col-form-label form-label">Address line 1</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="addressLine1" id="addressLine1Label" placeholder="Your address" aria-label="Your address" @bind="model.Address">
+                            </div>
+                        </div>                  
+                        <div class="row mb-4">
+                            <label for="zipCodeLabel" class="col-sm-3 col-form-label form-label">Zip code <i class="bi-question-circle text-body ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="You can find your code in a postal address."></i></label>
+                            <div class="col-sm-9">
+                                <input type="text" class="js-input-mask form-control" name="zipCode" id="zipCodeLabel" placeholder="Your zip code" aria-label="Your zip code" @bind="model.ZipCode" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer pt-0">
+                    <div class="d-flex justify-content-end gap-3">
+                        <a class="btn btn-white" href="javascript:;">Cancel</a>
+                        <a class="btn btn-primary" href="javascript:;">Save changes</a>
+                    </div>
+                </div>
+            </div>
+            <div id="editlegalCard" class="card">
+                <div class="card-header border-bottom">
+                    <h4 class="card-header-title">Legal Infromation</h4>
+                </div>
+                <div class="card-body">
                     <div class="row mb-4">
-                        <label class="col-sm-3 col-form-label form-label">Profile photo</label>
+                        <label for="locationLabel" class="col-sm-3 col-form-label form-label">Nationality</label>
+                        <div class="col-sm-9">
+                            <div class="tom-select-custom mb-3">
+                                <select class="js-select form-select" id="locationLabel" @bind="model.Nationality">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <label for="addressLine1Label" class="col-sm-3 col-form-label form-label">National ID number</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="addressLine1" id="addressLine1Label" placeholder="Your address" aria-label="Your address" @bind="model.NID">
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <label for="addressLine1Label" class="col-sm-3 col-form-label form-label">Passport number</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="addressLine1" id="addressLine1Label" placeholder="Your address" aria-label="Your address" @bind="model.Passport">
+                        </div>
+                    </div>
+                  
+                    <div class="row mb-4">
+                        <label for="birthdateeLabel" class="col-sm-3 col-form-label form-label">Birthday <i class="bi-question-circle text-body ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Your legal birth day"></i></label>
+                        <div class="col-sm-9">
+                            <input type="date" class="js-input-mask form-control" name="birthdateeLabel" id="birthdateeLabel" placeholder="" aria-label="Your birthdate" @bind="model.Birthday" >
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <label class="col-sm-3 col-form-label form-label">Passport</label>
                         <div class="col-sm-9">
                             <div class="d-flex align-items-center">
-                                <label class="avatar avatar-xl avatar-circle" for="avatarUploader">
-                                    <img id="avatarImg" class="avatar-img" src="./assets/img/160x160/img99.jpg" alt="Image Description">
-                                </label>
+                                                      <label class="avatar avatar-xl avatar-circle" for="avatarUploader">
+                                <img id="avatarImg" class="avatar-img" src='@((model.PassportImg)??"./assets/img/160x160/img99.jpg")' alt="Image Description">
+                            </label>
                                 <div class="d-grid d-sm-flex gap-2 ms-4">
+
                                     <div class="form-attachment-btn btn btn-primary btn-sm">
-                                        Upload photo
+                                        
+                                        Upload Passport
+                     
                                         <input type="file" class="js-file-attach form-attachment-btn-label" id="avatarUploader">
                                     </div>
                                     <button type="button" class="js-file-attach-reset-img btn btn-white btn-sm">Delete</button>
@@ -53,294 +196,164 @@
                         </div>
                     </div>
                     <div class="row mb-4">
-                        <label for="firstNameLabel" class="col-sm-3 col-form-label form-label">Full name in English <i class="bi-question-circle text-body ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Will be used as display name"></i></label>
+                        <label class="col-sm-3 col-form-label form-label">National ID</label>
                         <div class="col-sm-9">
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="firstName" id="firstNameLabel" placeholder="Clarice" aria-label="Clarice" value="  Mohamed Mohamed Mohamed Mohamed">
+                            <div class="d-flex align-items-center">
+                                                      <label class="avatar avatar-xl avatar-circle" for="avatarUploader">
+                                <img id="avatarImg" class="avatar-img" src='@((model.NIDImage)??"./assets/img/160x160/img99.jpg")' alt="Image Description">
+                            </label>
+                                <div class="d-grid d-sm-flex gap-2 ms-4">
+                                    <div class="form-attachment-btn btn btn-primary btn-sm">
+                                        Upload National ID
+                                        <input type="file" class="js-file-attach form-attachment-btn-label" id="avatarUploader">
+                                    </div>
+                                    <button type="button" class="js-file-attach-reset-img btn btn-white btn-sm">Delete</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="row mb-4">
-                        <label for="firstNameLabel" class="col-sm-3 col-form-label form-label">Full name in Arabic <i class="bi-question-circle text-body ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Will be used as formal name"></i></label>
+                        <label class="col-sm-3 col-form-label form-label">Birth certificate</label>
                         <div class="col-sm-9">
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="firstName" id="firstNameLabel" placeholder="Clarice" aria-label="Clarice" value="محمد محمد محمد محمد">
+                            <div class="d-flex align-items-center">
+                                                      <label class="avatar avatar-xl avatar-circle" for="avatarUploader">
+                                <img id="avatarImg" class="avatar-img" src='@((model.BirthCImg)??"./assets/img/160x160/img99.jpg")' alt="Image Description">
+                            </label>
+                                <div class="d-grid d-sm-flex gap-2 ms-4">
+                                    <div class="form-attachment-btn btn btn-primary btn-sm">
+                                        Upload certificate
+                                        <input type="file" class="js-file-attach form-attachment-btn-label" id="avatarUploader">
+                                    </div>
+                                    <button type="button" class="js-file-attach-reset-img btn btn-white btn-sm">Delete</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row mb-4">
-                        <label for="emailLabel" class="col-sm-3 col-form-label form-label">Email</label>
-                        <div class="col-sm-9">
-                            <input type="email" class="form-control" name="email" id="emailLabel" placeholder="example@example.com" aria-label="example@example.com" value="Mohamed@studentplus.com">
-                        </div>
+                </div>
+                <div class="card-footer pt-0">
+                    <div class="d-flex justify-content-end gap-3">
+                        <a class="btn btn-white" href="javascript:;">Cancel</a>
+                        <a class="btn btn-primary" href="javascript:;">Save changes</a>
                     </div>
-                    <div class="js-add-field row mb-4">
-                        <label for="phoneLabel" class="col-sm-3 col-form-label form-label">Phone</label>
-                        <div class="col-sm-9">
-                            <div class="input-group">
-                                <input type="text" class="js-input-mask form-control" name="phone" id="phoneLabel" placeholder="+x(xxx)xxx-xx-xx" aria-label="+x(xxx)xxx-xx-xx" value="+6942066613">
-                            </div>                      
-                        </div>
-                    </div>          
-                    <div class="row mb-4">
-                        <label class="col-sm-3 col-form-label form-label">Gender</label>
-                        <div class="col-sm-9">
-                            <div class="input-group input-group-md-down-break">
-                                <label class="form-control" for="genderTypeRadio1">
-                                    <span class="form-check">
-                                        <input type="radio" class="form-check-input" name="genderTypeRadio" id="genderTypeRadio1" checked>
-                                        <span class="form-check-label">Male</span>
-                                    </span>
-                                </label>
-                                <label class="form-control" for="genderTypeRadio2">
-                                    <span class="form-check">
-                                        <input type="radio" class="form-check-input" name="genderTypeRadio" id="genderTypeRadio2">
-                                        <span class="form-check-label">Female</span>
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            <div class="card-footer pt-0">
-                <div class="d-flex justify-content-end gap-3">
-                    <a class="btn btn-white" href="javascript:;">Cancel</a>
-                    <a class="btn btn-primary" href="javascript:;">Save changes</a>
                 </div>
             </div>
-        </div>
-        <div id="editAddressCard" class="card">
-            <div class="card-header border-bottom">
-                <h4 class="card-header-title">Address</h4>
-            </div>
-            <div class="card-body">
-                <form>
+            <div id="editlegalCard" class="card">
+                <div class="card-header border-bottom">
+                    <h4 class="card-header-title">Educational Infromation</h4>
+                </div>
+                <div class="card-body">
                     <div class="row mb-4">
-                        <label for="locationLabel" class="col-sm-3 col-form-label form-label">Location</label>
+                        <label for="locationLabel" class="col-sm-3 col-form-label form-label">Last qualification</label>
                         <div class="col-sm-9">
                             <div class="tom-select-custom mb-3">
-                                <select class="js-select form-select" id="locationLabel"> </select>
+                                <select class="js-select form-select" id="locationLabel" @bind="model.LastQual">
+ 
+                                </select>
                             </div>
-                            <div class="mb-3">
-                                <input type="text" class="form-control" name="city" id="cityLabel" placeholder="City" aria-label="City" value="Cairo">
-                            </div>
-                            <input type="text" class="form-control" name="state" id="stateLabel" placeholder="State" aria-label="District" value="Mohandseen">
                         </div>
                     </div>
                     <div class="row mb-4">
-                        <label for="addressLine1Label" class="col-sm-3 col-form-label form-label">Address line 1</label>
+                        <label class="col-sm-3 col-form-label form-label">Bachelor certificate :</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="addressLine1" id="addressLine1Label" placeholder="Your address" aria-label="Your address" value="27 9B Maadi Cairo Egypt">
+                            <div class="d-flex align-items-center">
+                                                                  <label class="avatar avatar-xl avatar-circle" for="avatarUploader">
+                                <img id="avatarImg" class="avatar-img" src='@((model.BCImg)??"./assets/img/160x160/img99.jpg")' alt="Image Description">
+                            </label>
+                                <div class="d-grid d-sm-flex gap-2 ms-4">
+                                    <div class="form-attachment-btn btn btn-primary btn-sm">
+                                        Upload certficate
+                                        <input type="file" class="js-file-attach form-attachment-btn-label" id="avatarUploader" />
+                                    </div>
+                                    <button type="button" class="js-file-attach-reset-img btn btn-white btn-sm">Delete</button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div id="addAddressFieldTemplate" style="display: none; position: relative;">
-                        <div class="input-group-add-field">
-                            <input type="text" class="form-control" data-name="addressLine" placeholder="Your address" aria-label="Your address">
-                        </div>
-                        <a class="js-delete-field input-group-add-field-delete" href="javascript:;">
-                            <i class="bi-x-lg"></i>
-                        </a>
                     </div>
                     <div class="row mb-4">
-                        <label for="zipCodeLabel" class="col-sm-3 col-form-label form-label">Zip code <i class="bi-question-circle text-body ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="You can find your code in a postal address."></i></label>
+                        <label class="col-sm-3 col-form-label form-label">Diploma certificate :</label>
                         <div class="col-sm-9">
-                            <input type="text" class="js-input-mask form-control" name="zipCode" id="zipCodeLabel" placeholder="Your zip code" aria-label="Your zip code" value="12613" />
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="card-footer pt-0">
-                <div class="d-flex justify-content-end gap-3">
-                    <a class="btn btn-white" href="javascript:;">Cancel</a>
-                    <a class="btn btn-primary" href="javascript:;">Save changes</a>
-                </div>
-            </div>
-        </div>
-        <div id="editlegalCard" class="card">
-            <div class="card-header border-bottom">
-                <h4 class="card-header-title">Legal Infromation</h4>
-            </div>
-            <div class="card-body">
-                <div class="row mb-4">
-                    <label for="locationLabel" class="col-sm-3 col-form-label form-label">Nationality</label>
-                    <div class="col-sm-9">
-                        <div class="tom-select-custom mb-3">
-                            <select class="js-select form-select" id="locationLabel">
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <label for="addressLine1Label" class="col-sm-3 col-form-label form-label">National ID number</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" name="addressLine1" id="addressLine1Label" placeholder="Your address" aria-label="Your address" value="24009070100434">
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <label for="addressLine1Label" class="col-sm-3 col-form-label form-label">Passport number</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" name="addressLine1" id="addressLine1Label" placeholder="Your address" aria-label="Your address" value="A00591234">
-                    </div>
-                </div>
-                <div id="addAddressFieldTemplate" style="display: none; position: relative;">
-                    <div class="input-group-add-field">
-                        <input type="text" class="form-control" data-name="addressLine" placeholder="Your address" aria-label="Your address">
-                    </div>
-                    <a class="js-delete-field input-group-add-field-delete" href="javascript:;">
-                        <i class="bi-x-lg"></i>
-                    </a>
-                </div>
-                <div class="row mb-4">
-                    <label for="zipCodeLabel" class="col-sm-3 col-form-label form-label">Birthday <i class="bi-question-circle text-body ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Your legal birth day"></i></label>
-                    <div class="col-sm-9">
-                        <input type="date" class="js-input-mask form-control" name="zipCode" id="zipCodeLabel" placeholder="" aria-label="Your zip code" value="">
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <label class="col-sm-3 col-form-label form-label">Passport</label>
-                    <div class="col-sm-9">
-                        <div class="d-flex align-items-center">
-                            <div class="d-grid d-sm-flex gap-2 ms-4">
-                                <div class="form-attachment-btn btn btn-primary btn-sm">
-                                    Upload Passport
-                                    <input type="file" class="js-file-attach form-attachment-btn-label" id="avatarUploader">
+                            <div class="d-flex align-items-center">
+                                                                  <label class="avatar avatar-xl avatar-circle" for="avatarUploader">
+                                <img id="avatarImg" class="avatar-img" src='@((model.DCImg)??"./assets/img/160x160/img99.jpg")' alt="Image Description">
+                            </label>
+                                <div class="d-grid d-sm-flex gap-2 ms-4">
+                                    <div class="form-attachment-btn btn btn-primary btn-sm">
+                                        Upload certficate
+                                        <input type="file" class="js-file-attach form-attachment-btn-label" id="avatarUploader" />
+                                    </div>
+                                    <button type="button" class="js-file-attach-reset-img btn btn-white btn-sm">Delete</button>
                                 </div>
-                                <button type="button" class="js-file-attach-reset-img btn btn-white btn-sm">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <label class="col-sm-3 col-form-label form-label">Master's certificate :</label>
+                        <div class="col-sm-9">
+                            <div class="d-flex align-items-center">
+                                                                  <label class="avatar avatar-xl avatar-circle" for="avatarUploader">
+                                <img id="avatarImg" class="avatar-img" src='@((model.MCImg)??"./assets/img/160x160/img99.jpg")' alt="Image Description">
+                            </label>
+                                <div class="d-grid d-sm-flex gap-2 ms-4">
+                                    <div class="form-attachment-btn btn btn-primary btn-sm">
+                                        Upload certficate
+                                        <input type="file" class="js-file-attach form-attachment-btn-label" id="avatarUploader" />
+                                    </div>
+                                    <button type="button" class="js-file-attach-reset-img btn btn-white btn-sm">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <label class="col-sm-3 col-form-label form-label">Ph.D certificate :</label>
+                        <div class="col-sm-9">
+                            <div class="d-flex align-items-center">
+                                                                  <label class="avatar avatar-xl avatar-circle" for="avatarUploader">
+                                <img id="avatarImg" class="avatar-img" src='@((model.PhdCimg)??"./assets/img/160x160/img99.jpg")' alt="Image Description">
+                            </label>
+                                <div class="d-grid d-sm-flex gap-2 ms-4">
+                                    <div class="form-attachment-btn btn btn-primary btn-sm">
+                                        Upload certficate
+                                        <input type="file" class="js-file-attach form-attachment-btn-label" id="avatarUploader" />
+                                    </div>
+                                    <button type="button" class="js-file-attach-reset-img btn btn-white btn-sm">Delete</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row mb-4">
-                    <label class="col-sm-3 col-form-label form-label">National ID</label>
-                    <div class="col-sm-9">
-                        <div class="d-flex align-items-center">
-                            <div class="d-grid d-sm-flex gap-2 ms-4">
-                                <div class="form-attachment-btn btn btn-primary btn-sm">
-                                    Upload National ID
-                                    <input type="file" class="js-file-attach form-attachment-btn-label" id="avatarUploader">
-                                </div>
-                                <button type="button" class="js-file-attach-reset-img btn btn-white btn-sm">Delete</button>
-                            </div>
-                        </div>
+                <div class="card-footer pt-0">
+                    <div class="d-flex justify-content-end gap-3">
+                        <a class="btn btn-white" href="javascript:;">Cancel</a>
+                        <a class="btn btn-primary" href="javascript:;">Save changes</a>
                     </div>
-                </div>
-                <div class="row mb-4">
-                    <label class="col-sm-3 col-form-label form-label">Birth certificate</label>
-                    <div class="col-sm-9">
-                        <div class="d-flex align-items-center">
-                            <div class="d-grid d-sm-flex gap-2 ms-4">
-                                <div class="form-attachment-btn btn btn-primary btn-sm">
-                                    Upload certificate
-                                    <input type="file" class="js-file-attach form-attachment-btn-label" id="avatarUploader">
-                                </div>
-                                <button type="button" class="js-file-attach-reset-img btn btn-white btn-sm">Delete</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-footer pt-0">
-                <div class="d-flex justify-content-end gap-3">
-                    <a class="btn btn-white" href="javascript:;">Cancel</a>
-                    <a class="btn btn-primary" href="javascript:;">Save changes</a>
-                </div>
-            </div>
-        </div>
-        <div id="editlegalCard" class="card">
-            <div class="card-header border-bottom">
-                <h4 class="card-header-title">Educational Infromation</h4>
-            </div>
-            <div class="card-body">
-                <div class="row mb-4">
-                    <label for="locationLabel" class="col-sm-3 col-form-label form-label">Last qualification</label>
-                    <div class="col-sm-9">
-                        <div class="tom-select-custom mb-3">
-                            <select class="js-select form-select" id="locationLabel">
-                                <option>Bsc.</option>
-                                <option>Diploma</option>
-                                <option>Master</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                 <div class="row mb-4">
-                    <label class="col-sm-3 col-form-label form-label">Bachelor certificate :</label>
-                    <div class="col-sm-9">
-                        <div class="d-flex align-items-center">
-                            <div class="d-grid d-sm-flex gap-2 ms-4">
-                                <div class="form-attachment-btn btn btn-primary btn-sm">
-                                    Upload certficate
-                                    <input type="file" class="js-file-attach form-attachment-btn-label" id="avatarUploader" />
-                                </div>
-                                <button type="button" class="js-file-attach-reset-img btn btn-white btn-sm">Delete</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <label class="col-sm-3 col-form-label form-label">Diploma certificate :</label>
-                    <div class="col-sm-9">
-                        <div class="d-flex align-items-center">
-                            <div class="d-grid d-sm-flex gap-2 ms-4">
-                                <div class="form-attachment-btn btn btn-primary btn-sm">
-                                    Upload certficate
-                                    <input type="file" class="js-file-attach form-attachment-btn-label" id="avatarUploader" />
-                                </div>
-                                <button type="button" class="js-file-attach-reset-img btn btn-white btn-sm">Delete</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <label class="col-sm-3 col-form-label form-label">Master certificate :</label>
-                    <div class="col-sm-9">
-                        <div class="d-flex align-items-center">
-
-                            <div class="d-grid d-sm-flex gap-2 ms-4">
-                                <div class="form-attachment-btn btn btn-primary btn-sm">
-                                    Upload certficate
-                                    <input type="file" class="js-file-attach form-attachment-btn-label" id="avatarUploader" />
-                                </div>
-                                <button type="button" class="js-file-attach-reset-img btn btn-white btn-sm">Delete</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-      
-            </div>
-            <div class="card-footer pt-0">
-                <div class="d-flex justify-content-end gap-3">
-                    <a class="btn btn-white" href="javascript:;">Cancel</a>
-                    <a class="btn btn-primary" href="javascript:;">Save changes</a>
                 </div>
             </div>
         </div>
     </div>
-</div>
-@code {
-    public EditContext? editContext;
-    protected override void OnInitialized()
-    {
-        editContext = new(model);
-        editContext?.SetFieldCssClassProvider(new CustomFieldClassProvider());
-        WFS.OnChange += StateHasChanged;
-    }
-    public AccountLogin model { get; set; } = new();
-    [Parameter]
-    public EventCallback<MouseEventArgs> OnClickCallback { get; set; }
-    void OnClick(MouseEventArgs e, string page)
-    {
-        WFS.Page = page;
-        stateHasChanged();
-        OnClickCallback.InvokeAsync(e);
-    }
-    async void stateHasChanged()
-    {
-        if (!WFS.IsLoggedIn)
+    @code {
+        public EditContext? editContext;
+        protected override void OnInitialized()
         {
-            await   BrowserStorage.SetAsync("Page",  "Login");
-            WFS.Page = "Login";
+            editContext = new(model);
+            editContext?.SetFieldCssClassProvider(new CustomFieldClassProvider());
+            WFS.OnChange += StateHasChanged;
         }
-        StateHasChanged();
+        public StudentAccount model => WFS.Model ?? new();
+        [Parameter]
+        public EventCallback<MouseEventArgs> OnClickCallback { get; set; }
+        void OnClick(MouseEventArgs e, string page)
+        {
+            WFS.Page = page;
+            stateHasChanged();
+            OnClickCallback.InvokeAsync(e);
+        }
+        async void stateHasChanged()
+        {
+            if (!WFS.IsLoggedIn)
+            {
+                await BrowserStorage.SetAsync("Page", "Login");
+                WFS.Page = "Login";
+            }
+            StateHasChanged();
+        }
     }
-}
