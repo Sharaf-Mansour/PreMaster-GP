@@ -71,7 +71,9 @@
                 <div class="row mb-4">
                     <label for="emailLabel" class="col-sm-3 col-form-label form-label">Email</label>
                     <div class="col-sm-9">
-                        <input type="email" class="form-control" name="email" id="emailLabel" placeholder="example@example.com" aria-label="example@example.com" @bind="model.Email">
+                        <label type="email" class="form-control" name="email" id="emailLabel" placeholder="example@example.com" aria-label="example@example.com"  >
+                           @model.Email
+                        </label>
                     </div>
                 </div>
                 <div class="js-add-field row mb-4">

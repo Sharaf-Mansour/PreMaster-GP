@@ -70,7 +70,9 @@
     {
         if (await model.IsValidAsync())
         {
-          await  new UserEmailService().AddStudentAccountAsync(model);
+            await  new UserEmailService().AddStudentAccountAsync(model);
+            WFS.Page = "Login";
+            WFS.NotifyStateChanged();
         }
     }
 
