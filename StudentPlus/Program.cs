@@ -13,7 +13,8 @@ builder.Services.AddRazorPages()
     .Services.AddServerSideBlazor((o) => o.DetailedErrors = true)
      .Services.AddScoped<NavigationService>()
     .AddScoped<IStorageBroker, StorageBroker>()
-   .AddScoped<UserEmailService>();
+   .AddScoped<UserEmailService>()
+   .AddScoped<StudentProfileService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

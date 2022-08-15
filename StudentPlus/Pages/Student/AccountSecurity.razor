@@ -10,34 +10,37 @@
                         <label for="currentPasswordLabel" class="col-sm-3 col-form-label form-label">Current password</label>
 
                         <div class="col-sm-9">
-                            <input type="password" class="form-control" name="currentPassword" id="currentPasswordLabel" placeholder="Enter current password" aria-label="Enter current password">
+                            <input type="password" @bind="CurrentPassword" class="form-control" name="currentPassword" id="currentPasswordLabel" placeholder="Enter current password" aria-label="Enter current password">
                         </div>
                     </div>
                     <div class="row mb-4">
-                        <label for="newPassword" class="col-sm-3 col-form-label form-label">New password</label>
+                        <label for="newPassword"  class="col-sm-3 col-form-label form-label">New password</label>
                         <div class="col-sm-9">
-                            <input type="password" class="form-control" name="newPassword" id="newPassword" placeholder="Enter new password" aria-label="Enter new password">
+                            <input type="password" @bind="NewPassword" class="form-control" name="newPassword" id="newPassword" placeholder="Enter new password" aria-label="Enter new password">
                         </div>
                     </div>
                     <div class="row mb-4">
                         <label for="confirmNewPasswordLabel" class="col-sm-3 col-form-label form-label">Confirm new password</label>
                         <div class="col-sm-9">
                             <div class="mb-3">
-                                <input type="password" class="form-control" name="confirmNewPassword" id="confirmNewPasswordLabel" placeholder="Confirm your new password" aria-label="Confirm your new password">
+                                <input type="password" @bind="ConfirmPassword" class="form-control" name="confirmNewPassword" id="confirmNewPasswordLabel" placeholder="Confirm your new password" aria-label="Confirm your new password">
                             </div>
-                            <h5>Password requirements:</h5>
+                            <h6 style="color:red">
+                                @Error  
+                            </h6>
+                        @*    <h5>Password requirements:</h5>
                             <p class="card-text small">Ensure that these requirements are met:</p>
                             <ul class="small">
                                 <li>Minimum 8 characters long - the more, the better</li>
                                 <li>At least one lowercase character</li>
                                 <li>At least one uppercase character</li>
                                 <li>At least one number, symbol, or whitespace character</li>
-                            </ul>
+                            </ul>*@
                         </div>
                     </div>
                     <div class="d-flex justify-content-end gap-3">
-                        <a class="btn btn-white" href="javascript:;">Cancel</a>
-                        <button type="submit" class="btn btn-primary">Update Password</button>
+                        <a class="btn btn-white" @onclick="Cancel">Cancel</a>
+                     <a @onclick="async()=> await PutPasswordAsync()" class="btn btn-primary">Update Password</a>
                     </div>
                 </form>
             </div>
@@ -91,11 +94,42 @@
         </div>
 *@    </div>
 </div>
+
 @code {
     public EditContext? editContext;
+    string Error = "";
+    string CurrentPassword, NewPassword, ConfirmPassword;
+    void Cancel() => (CurrentPassword, NewPassword, ConfirmPassword) = ("", "", "");
+    async ValueTask PutPasswordAsync(){
+        if ((CurrentPassword,NewPassword,ConfirmPassword) is not ({ },{ },{ }))
+            {
+            Error = "Please Enter Data";
+        }
+        else if (CurrentPassword != model.Password)
+        {
+            Error = "Current password is incorrect";
 
+         }
+        else if (CurrentPassword == NewPassword)
+        {
+            Error = "Current Password Same as New Password";
+         }
+        else if (NewPassword != ConfirmPassword)
+        {
+            Error = "New Password and Confirm password does not match";
+         }        
+        else{
+                   var result = await new  StudentProfileService().EditStudentPasswordAsync(model.ID,NewPassword);
+            Error = result is 1 ? "Password Updated Successfully" : "Password Update Failed";
+         }
+       
+
+ }
+       
+  
     protected override void OnInitialized()
     {
+        model = WFS.Model ?? new();
         editContext = new(model);
         editContext?.SetFieldCssClassProvider(new CustomFieldClassProvider());
                 WFS.OnChange += StateHasChanged;

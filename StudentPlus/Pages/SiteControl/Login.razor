@@ -65,7 +65,8 @@
             await BrowserStorage.SetAsync("StayLoggedin", WFS.StayLoggedin);
             if (WFS.StayLoggedin)
             {
-                await BrowserStorage.SetAsync("User", WFS.Model);
+                await BrowserStorage.DeleteAsync("User");
+                await BrowserStorage.SetAsync("Email", WFS.Model?.Email??""); //SavePassword
                 await BrowserStorage.SetAsync("IsLoggedIn", WFS.IsLoggedIn);
             }
 
