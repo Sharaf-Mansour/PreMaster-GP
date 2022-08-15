@@ -372,19 +372,19 @@
     LookUpTable[]? Country { get; set; }
     LookUpTable[]? Nationality { get; set; }
     LookUpTable[]? Qualifications { get; set; }
-    
+
     protected override async Task OnInitializedAsync(){
         var LUS = new LookUpService();
         Country = await LUS.RetriveDataAsync(TableName: nameof(Country));
         Qualifications = await LUS.RetriveDataAsync(TableName: nameof(Qualifications));
         Nationality = await LUS.RetriveDataAsync(TableName: nameof(Nationality));
     }
-        async ValueTask PutChangesAsync()
+    async ValueTask PutChangesAsync()
     {
         // if (await model.IsValidAsync())
-      //  Console.WriteLine();
-     //   Console.WriteLine(model.ID);
-        await new StudentProfileService().EditStudentProfileAsync(model)
+        //  Console.WriteLine();
+        //   Console.WriteLine(model.ID);
+        await new StudentProfileService().EditStudentProfileAsync(model);
         modelClone = model.DeepClone(); 
     }
     async ValueTask LoadFilesAsync(InputFileChangeEventArgs e, string ObjName)
