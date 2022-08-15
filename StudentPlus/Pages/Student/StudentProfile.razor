@@ -101,7 +101,7 @@
             <div class="card-footer pt-0">
                 <div class="d-flex justify-content-end gap-3">
                     <a class="btn btn-white" @onclick="Cancel"   >Cancel</a>
-                    <a class="btn btn-primary"  @onclick="async()=> await PostChangesAsync()" >Save changes</a>
+                    <a class="btn btn-primary"  @onclick="async()=> await PutChangesAsync()" >Save changes</a>
                 </div>
             </div>
         </div>
@@ -149,7 +149,7 @@
             <div class="card-footer pt-0">
                 <div class="d-flex justify-content-end gap-3">
                     <a class="btn btn-white" @onclick="Cancel"   >Cancel</a>
-                    <a class="btn btn-primary"  @onclick="async()=> await PostChangesAsync()" >Save changes</a>
+                    <a class="btn btn-primary"  @onclick="async()=> await PutChangesAsync()" >Save changes</a>
                 </div>
             </div>
         </div>
@@ -254,7 +254,7 @@
             <div class="card-footer pt-0">
                 <div class="d-flex justify-content-end gap-3">
                     <a class="btn btn-white" @onclick="Cancel"   >Cancel</a>
-                    <a class="btn btn-primary"  @onclick="async()=> await PostChangesAsync()" >Save changes</a>
+                    <a class="btn btn-primary"  @onclick="async()=> await PutChangesAsync()" >Save changes</a>
                 </div>
             </div>
         </div>
@@ -355,7 +355,7 @@
             <div class="card-footer pt-0">
                 <div class="d-flex justify-content-end gap-3">
                     <a class="btn btn-white" @onclick="Cancel"   >Cancel</a>
-                    <a class="btn btn-primary"  @onclick="async()=> await PostChangesAsync()" >Save changes</a>
+                    <a class="btn btn-primary"  @onclick="async()=> await PutChangesAsync()" >Save changes</a>
                 </div>
             </div>
         </div>
@@ -379,11 +379,12 @@
         Qualifications = await LUS.RetriveDataAsync(TableName: nameof(Qualifications));
         Nationality = await LUS.RetriveDataAsync(TableName: nameof(Nationality));
     }
-        async ValueTask PostChangesAsync()
+        async ValueTask PutChangesAsync()
     {
         // if (await model.IsValidAsync())
-      //  Console.WriteLine(await new StudentProfileService().EditStudentProfileAsync(model));
+      //  Console.WriteLine();
      //   Console.WriteLine(model.ID);
+        await new StudentProfileService().EditStudentProfileAsync(model)
         modelClone = model.DeepClone(); 
     }
     async ValueTask LoadFilesAsync(InputFileChangeEventArgs e, string ObjName)
