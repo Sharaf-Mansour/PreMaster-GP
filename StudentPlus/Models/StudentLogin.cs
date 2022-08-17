@@ -7,3 +7,4 @@ public partial class AccountLogin : StudentId
     public bool InEditState { get; set; }
     public async ValueTask<bool> IsValidAsync() => (await new AccountLoginValidator().ValidateAsync(this)).IsValid;
 }
+

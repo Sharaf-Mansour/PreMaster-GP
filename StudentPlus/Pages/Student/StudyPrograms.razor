@@ -22,20 +22,17 @@
                 </span>
             </div>
             <div class="tab-content" id="accountOrdersTabContent">
+         
                 <div class="tab-pane fade show active" id="accountOrdersOne" role="tabpanel" aria-labelledby="accountOrdersOne-tab">
                     <div class="d-sm-flex align-items-sm-center mb-5">
-                        <div class="tom-select-custom">
-                            <select class="js-select form-select form-select-sm">
-                                <option value="last 30 days">Computer Science</option>
-                                <option value="past 6 months" selected>Infromation technology</option>
-                                <option value="past 6 months" selected>Business adminstration</option>
-                                <option value="2019">Energy Engineering</option>
-                            </select>
-                        </div>
+                
+                        
+                 
+                        
                         <div class="tom-select-custom">
                             <select class="js-select form-select form-select-sm">
                                 <option value="last 30 days">PHD</option>
-                                <option value="past 6 months" selected>Master</option>
+                                <option value="past 6 months"  >Master</option>
                                 <option value="past 6 months" selected>Diploma</option>
                                 <option value="2019">Courses</option>
                             </select>
@@ -49,59 +46,63 @@
                         </div>
                         <div class="tom-select-custom">
                             <select class="js-select form-select form-select-sm">
-                                <option value="last 30 days">Software engineering</option>
-                                <option value="past 6 months" selected>Project managment</option>
+                                <option value="last 30 days" selected>Software engineering</option>
+                                <option value="past 6 months" >Project managment</option>
                                 <option value="2019">Webdesign</option>
-                                <option value="past 6 months" selected>Project managment</option>
-                            </select>
+                             </select>
                         </div>
                     </div>
                     <ul class="list-unstyled mb-5">
-                        <li class="card card-bordered shadow-none mb-3">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-6 col-md mb-3 mb-md-0">
-                                        <small class="card-subtitle mb-0">Cost</small>
-                                        <small class="text-dark fw-semi-bold">7000EGP</small>
-                                        <small class="text-dark fw-semi-bold card-subtitle">$1500</small>
-                                    </div>
-                                    <div class="col-6 col-md mb-3 mb-md-0">
-                                        <small class="card-subtitle mb-0">Program name</small>
-                                        <small class="text-dark fw-semi-bold">Master in Software engineering</small>
-                                    </div>
-                                    <div class="col-6 col-md">
-                                        <small class="card-subtitle mb-0">Program ID</small>
-                                        <small class="text-dark fw-semi-bold">456853648</small>
-                                    </div>
-                                    <div class="col-6 col-md">
-                                        <small class="card-subtitle mb-0">Start date</small>
-                                        <small class="text-dark fw-semi-bold">30 April, 2023</small>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <div class="row gx-2">
-                                            <div class="col">
+                        @if (programs is not null){
+                            foreach (var item in programs){
+                                <li class="card card-bordered shadow-none mb-3">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-6 col-md mb-3 mb-md-0">
+                                                <small class="card-subtitle mb-0">Cost</small>
+                                                <small class="text-dark fw-semi-bold">@item.CostEGP EGP</small>
+                                                <small class="text-dark fw-semi-bold card-subtitle">$@item.CostUSD</small>
                                             </div>
-                                            <div class="col">
-                                                <img class="img-fluid" src="./assets/img/380x360/img10.jpg" alt="Image Description">
+                                            <div class="col-6 col-md mb-3 mb-md-0">
+                                                <small class="card-subtitle mb-0">Program name</small>
+                                                <small class="text-dark fw-semi-bold">@item.Name</small>
+                                            </div>
+                                            <div class="col-6 col-md">
+                                                <small class="card-subtitle mb-0">Program ID</small>
+                                                <small class="text-dark fw-semi-bold">@item.ID</small>
+                                            </div>
+                                            <div class="col-6 col-md">
+                                                <small class="card-subtitle mb-0">Start date</small>
+                                                <small class="text-dark fw-semi-bold">@item.StartDate.ToLongDateString()</small>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <div class="row gx-2">
+                                                    <div class="col">
+                                                    </div>
+                                                    <div class="col">
+                                                        <img class="img-fluid" src='@(item.Image ?? "./assets/img/380x360/img10.jpg")' alt="Image Description">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="d-grid gap-2">
+                                                    <ProgramDetails programID="@(item.ID ?? 0)" />
+                                                    <a class="btn btn-white btn-sm" href="/">
+                                                        <i class="bi-arrow-counterclockwise small me-2"></i> Add to wish list
+                                                    </a>
+                                                    <ProgramApplytProfile programID="@(item.ID ?? 0)"/>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="d-grid gap-2">
-                                            <ProgramDetails />
-                                            <a class="btn btn-white btn-sm" href="/">
-                                                <i class="bi-arrow-counterclockwise small me-2"></i> Add to wish list
-                                            </a>
-                                            <a class="btn btn-primary btn-sm" href="/">Apply now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="card card-bordered shadow-none mb-3">
+                                </li>
+
+                            }
+                        }
+              @*          <li class="card card-bordered shadow-none mb-3">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-6 col-md mb-3 mb-md-0">
@@ -189,7 +190,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </li>
+                        </li>*@
                     </ul>
                     <nav aria-label="Page navigation">
                         <ul class="pagination justify-content-center">
@@ -224,9 +225,14 @@
 </div>
 @code {
     public EditContext? editContext;
-
+    public List<Programs> programs = new List<Programs>();
+    protected override async Task OnInitializedAsync()
+    {
+        programs = await new ProgramService().RetriveProgramAsync();
+    }
     protected override void OnInitialized()
     {
+
         editContext = new(model);
         editContext?.SetFieldCssClassProvider(new CustomFieldClassProvider());
         WFS.OnChange += StateHasChanged;

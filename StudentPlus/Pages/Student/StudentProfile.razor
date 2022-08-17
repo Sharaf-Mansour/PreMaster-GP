@@ -385,7 +385,8 @@
         //  Console.WriteLine();
         //   Console.WriteLine(model.ID);
         await new StudentProfileService().EditStudentProfileAsync(model);
-        modelClone = model.DeepClone(); 
+        modelClone = model.DeepClone();
+        WFS.NotifyStateChanged();
     }
     async ValueTask LoadFilesAsync(InputFileChangeEventArgs e, string ObjName)
     {
@@ -416,6 +417,7 @@
 
             return;
         }
+        
 
     }
     protected override void OnInitialized()

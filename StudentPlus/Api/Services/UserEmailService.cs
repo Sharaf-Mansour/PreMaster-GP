@@ -10,3 +10,14 @@ public class UserEmailService
     public async ValueTask<StudentAccount> RetriveFullUserAccountByEmailAsync(string Email) => await this.storageBroker.SelectFullUserAccountByEmailAsync(Email: Email);
 
 }
+public class ProgramService
+{
+    [Inject] protected IStorageBroker storageBroker { get; set; } = new StorageBroker();
+    public async ValueTask<List<Programs>> RetriveProgramAsync() => (await this.storageBroker.SelectProgramAsync()).AsList();
+    public async ValueTask<List<ProgramsCourses>> RetriveProgramsCoursesAsync(int ProgramID) => await this.storageBroker.SelectProgramsCoursesAsync(ProgramID: ProgramID);
+    public async ValueTask<ProgramModel> RetriveProgramModel(int ProgramID) => new ProgramModel
+    {
+        Program = (await RetriveProgramAsync()).FirstOrDefault((_) => _.ID == ProgramID),
+        programsCourses = (await RetriveProgramsCoursesAsync(ProgramID))
+    };
+}
